@@ -1,178 +1,80 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Охота с беркутом — Южный берег Иссык-Куля</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #f0f0f0;
-      background: linear-gradient(to bottom, #0a0a0a, #001020);
-      min-height: 100vh;
-    }
-    header {
-      height: 100vh;
-      background: url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    header::before {
-      content:""; position:absolute; inset:0;
-      background: rgba(0,0,0,0.58);
-    }
-    .content { position:relative; z-index:2; padding:0 20px; }
-    h1 {
-      font-size: clamp(3rem, 10vw, 7rem);
-      font-weight: 800;
-      letter-spacing: 5px;
-      color:#fff;
-      text-shadow: 0 4px 30px rgba(0,212,255,0.6);
-      margin-bottom: 20px;
-    }
-    .subtitle {
-      font-size: 1.6rem;
-      opacity: 0.95;
-      margin-bottom: 60px;
-      color: #a0f8ff;
-    }
-
-    .back-home {
-      position: fixed;
-      top: 20px; left: 20px;
-      background: rgba(0,212,255,0.2);
-      backdrop-filter: blur(12px);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(0,212,255,0.5);
-      z-index: 1000;
-      transition: all 0.3s;
-    }
-    .back-home:hover {
-      background: rgba(0,212,255,0.4);
-      transform: translateX(-5px);
-      box-shadow: 0 8px 30px rgba(0,212,255,0.4);
-    }
-
-    .section {
-      padding: 120px 20px 100px;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 40px;
-      margin-top: 50px;
-    }
-    .card {
-      background: rgba(25,35,50,0.94);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(0,212,255,0.3);
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.5s ease;
-      box-shadow: 0 12px 50px rgba(0,0,0,0.6);
-    }
-    .card:hover {
-      transform: translateY(-20px);
-      border-color: #00eeff;
-      box-shadow: 0 30px 80px rgba(0,212,255,0.4);
-    }
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-    .card-body {
-      padding: 30px;
-      text-align: center;
-    }
-    .card-body h3 {
-      font-size: 1.8rem;
-      margin-bottom: 16px;
-      color: #00ffcc;
-    }
-    .card-body p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      opacity: 0.9;
-      margin-bottom: 20px;
-    }
-    .price {
-      background: linear-gradient(90deg, #00d4ff, #00ffcc);
-      color: #000;
-      font-weight: 800;
-      padding: 10px 24px;
-      border-radius: 30px;
-      font-size: 1.1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      opacity: 0.8;
-      color: #88e0ff;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Охота с беркутом 2025 — Боконбаево</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#f0f8ff;background:#0a0a0a min-height:100vh}
+.back-home{position:fixed;top:20px;left:20px;background:rgba(0,212,255,.25);backdrop-filter:blur(12px);color:#fff;padding:12px 26px;border-radius:50px;text-decoration:none;font-weight:700;border:1px solid rgba(0,255,255,.5);z-index:1000;transition:.3s}
+.back-home:hover{background:rgba(0,212,255,.5);transform:translateX(-6px);box-shadow:0 0 30px rgba(0,255,255,.6)}
+header{height:100vh;background:url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg')center/cover fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative}
+header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.62)}
+h1{font-size:clamp(3.5rem,11vw,7.5rem);font-weight:900;letter-spacing:6px;color:#fff;text-shadow:0 6px 30px #000;position:relative;z-index:2}
+.subtitle{font-size:1.7rem;color:#a0f8ff;margin-top:20px;position:relative;z-index:2}
+.container{max-width:1400px;margin:0 auto;padding:140px 20px 120px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:50px;margin-top:40px}
+.card{background:rgba(25,35,55,.96);backdrop-filter:blur(20px);border:1px solid rgba(0,255,255,.3);border-radius:32px;overflow:hidden;transition:.6s;box-shadow:0 15px 50px #000000b3}
+.card:hover{transform:translateY(-25px);border-color:#0ff;box-shadow:0 40px 90px rgba(0,255,255,.5)}
+.card img{width:100%;height:300px;object-fit:cover;transition:.7s}
+.card:hover img{transform:scale(1.12)}
+.card-body{padding:34px;text-align:center}
+.card-body h3{font-size:1.85rem;margin-bottom:16px;color:#0ff;font-weight:900}
+.card-body p{font-size:1.15rem;line-height:1.7;opacity:.92;margin-bottom:28px}
+.price-tag{display:inline-block;background:linear-gradient(90deg,#0ff,#0fc);color:#000;font-weight:900;font-size:1.35rem;padding:14px 32px;border-radius:50px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,255,255,.5)}
+.btn{display:inline-block;background:#25d366;color:#fff;font-weight:800;padding:16px 40px;border-radius:50px;text-decoration:none;font-size:1.2rem;box-shadow:0 10px 30px rgba(37,211,102,.5);transition:.4s}
+.btn:hover{transform:scale(1.1);box-shadow:0 15px 45px rgba(37,211,102,.8)}
+footer{text-align:center;padding:80px 20px;color:#88e0ff;font-size:1rem;opacity:.9}
+@media(max-width:768px){.grid{grid-template-columns:1fr;gap:60px}}
+</style>
 </head>
 <body>
 
-  <a href="index.html" class="back-home">
-    ← На главную
-  </a>
+<a href="index.html" class="back-home">← На главную</a>
 
-  <header>
-    <div class="content">
-      <h1>ОХОТА С БЕРКУТОМ</h1>
-      <div class="subtitle">Древнее кыргызское искусство беркутчи на южном берегу Иссык-Куля</div>
-    </div>
-  </header>
+<header>
+  <h1>ОХОТА С БЕРКУТОМ</h1>
+  <div class="subtitle">Настоящее кыргызское шоу в Боконбаево</div>
+</header>
 
-  <section class="section">
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1603899122634-5b7c7e1f8c8b?w=1200&q=80" alt="Беркутчи Боконбаево">
-        <div class="card-body">
-          <h3>Классическое шоу беркут-шоу</h3>
-          <p>Боконбаево · 30–45 минут<br>Беркут охотится на лису и зайца прямо при вас<br>Фото с птицей на руке включено</p>
-          <div class="price">1 000 сом с человека<br><small>группа от 5 чел — 800 сом</small></div>
-        </div>
-      </div>
+<div class="container">
+  <div class="grid">
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=1200&q=80" alt="Ночная охота">
-        <div class="card-body">
-          <h3>Ночная охота на волка (зима)</h3>
-          <p>Только декабрь–февраль<br>Выезд в степь на машинах + чай у костра<br>Настоящая кочевая охота</p>
-          <div class="price">от 25 000 сом за группу до 6 чел</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1612458973408-1e8f2c2c9fd3?w=1200&q=80" alt="Мастер-класс">
-        <div class="card-body">
-          <h3>Мастер-класс «Стань беркутчи»</h3>
-          <p>Обучение держанию беркута, командам, истории<br>Подходит детям и взрослым</p>
-          <div class="price">1 500 сом / чел (1,5 часа)</div>
-        </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1603899122634-5b7c7e1f8c8b?w=1400&q=85" alt="Шоу">
+      <div class="card-body">
+        <h3>Классическое шоу</h3>
+        <p>Боконбаево · 30–45 минут<br>Беркут охотится на лису и зайца<br>Фото с орлом включено</p>
+        <div class="price-tag">1 000 сом / чел<br><small style="font-size:.9rem;opacity:.8">группа от 5 чел — 800 сом</small></div>
+        <a href="https://wa.me/996999123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BD%D0%B0%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88%D0%BE%D1%83" class="btn">Записаться</a>
       </div>
     </div>
-  </section>
 
-  <footer>
-    © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности
-  </footer>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=1400&q=85" alt="Ночная охота">
+      <div class="card-body">
+        <h3>Ночная охота на волка</h3>
+        <p>Декабрь–февраль · Выезд в степь<br>Чай у костра · Реальная охота</p>
+        <div class="price-tag">от 25 000 сом<br>группа до 6 чел</div>
+        <a href="https://wa.me/996999123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BD%D0%BE%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BE%D1%85%D0%BE%D1%82%D0%B0" class="btn">Бронь</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1612458973408-1e8f2c2c9fd3?w=1400&q=85" alt="Мастер-класс">
+      <div class="card-body">
+        <h3>Мастер-класс «Стань беркутчи»</h3>
+        <p>Обучение держанию беркута · 1,5 часа<br>Подходит детям и взрослым</p>
+        <div class="price-tag">1 500 сом / чел</div>
+        <a href="https://wa.me/996999123456?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81" class="btn">Записаться</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>© 2025 Южный Берег Иссык-Куля · Охота с беркутом — каждые выходные</footer>
 </body>
 </html>
