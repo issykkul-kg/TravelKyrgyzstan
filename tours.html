@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Туры и экскурсии — Южный берег Иссык-Куль</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Тот же CSS, что и выше — просто копипаст */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;color:#f0f0f0;background:linear-gradient(to bottom,#0a0a0a,#001020);min-height:100vh;}
+    header{height:100vh;background:url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;}
+    header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.58);}
+    .content{position:relative;z-index:2;padding:0 20px;}
+    h1{font-size:clamp(3rem,10vw,7rem);font-weight:800;letter-spacing:5px;color:#fff;text-shadow:0 4px 30px rgba(0,212,255,.6);margin-bottom:20px;}
+    .subtitle{font-size:1.6rem;opacity:.95;margin-bottom:60px;color:#a0f8ff;}
+    .back-home{position:fixed;top:20px;left:20px;background:rgba(0,212,255,.2);backdrop-filter:blur(12px);color:#fff;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:10px;border:1px solid rgba(0,212,255,.5);z-index:1000;transition:all .3s;}
+    .back-home:hover{background:rgba(0,212,255,.4);transform:translateX(-5px);box-shadow:0 8px 30px rgba(0,212,255,.4);}
+    .section{padding:120px 20px 100px;max-width:1300px;margin:0 auto;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px;margin-top:50px;}
+    .card{background:rgba(25,35,50,.94);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,.3);border-radius:28px;overflow:hidden;transition:all .5s;box-shadow:0 12px 50px rgba(0,0,0,.6);}
+    .card:hover{transform:translateY(-20px);border-color:#00eeff;box-shadow:0 30px 80px rgba(0,212,255,.4);}
+    .card img{width:100%;height:280px;object-fit:cover;}
+    .card-body{padding:30px;text-align:center;}
+    .card-body h3{font-size:1.7rem;margin-bottom:14px;color:#00ffcc;}
+    .card-body p{line-height:1.6;opacity:0.9;margin-bottom:20px;}
+    .price{background:linear-gradient(90deg,#00d4ff,#00ffcc);color:#000;font-weight:800;padding:10px 24px;border-radius:30px;font-size:1.1rem;}
+    footer{text-align:center;padding:60px 20px;opacity:0.8;color:#88e0ff;}
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-home">
+    ← На главную
+  </a>
+
+  <header>
+    <div class="content">
+      <h1>ТУРЫ И ЭКСКУРСИИ</h1>
+      <div class="subtitle">Лучшие маршруты южного берега Иссык-Куля 2025</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80" alt="Конный тур">
+        <div class="card-body">
+          <h3>Конный тур в каньон Сказка</h3>
+          <p>3–5 часов · обед у местных · фото-стопы<br>Лошади подготовленные, инструктор</p>
+          <div class="price">от 2 500 сом / чел</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=1200&q=80" alt="Джип">
+        <div class="card-body">
+          <h3>Джип-тур «Джеты-Огуз + Барскоон»</h3>
+          <p>Полный день · водопады · обед в юрте<br>Toyota Land Cruiser / Delica</p>
+          <div class="price">5 500 сом / чел (группа 4–6)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519904981064-b0ef1b3b6a38?w=1200&q=80" alt="Катер">
+        <div class="card-body">
+          <h3>Катер по Иссык-Кулю</h3>
+          <p>1 час · до 10 человек<br>Купание в открытом озере, фотосессия</p>
+          <div class="price">12 000 сом / катер</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1559827260-dc8439a7f2b2?w=1200&q=80" alt="Треккинг">
+        <div class="card-body">
+          <h3>Треккинг к леднику Барскоон</h3>
+          <p>8–10 часов · перекус · гид<br>Высота 3900 м</p>
+          <div class="price">4 800 сом / чел</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Южный Берег Иссык-Куля · Все права защищены
+ 2025
+  </footer>
+</body>
+</html>
