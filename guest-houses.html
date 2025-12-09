@@ -1,32 +1,217 @@
-<h2 style="text-align:center; color:#00e5e5; font-size:3.4rem; margin-bottom:70px; letter-spacing:4px; font-weight:900">
-&nbsp;&nbsp;Лучшие отели и гостевые дома 2025
-</h2>
-<div class="grid">
-&nbsp;&nbsp;<div class="hotel-card">
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://images.unsplash.com/photo-1582719478250-c89cd483e89e?w=1200&auto=format&fit=crop&q=80" alt="АЛМАЗ HOUSE">
-&nbsp;&nbsp;&nbsp;&nbsp;<div class="info">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3>АЛМАЗ HOUSE</h3>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>5★ • Уютные комнаты • Близко к озеру</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="price">от 2 500 сом / ночь</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wa.me/996702703456" class="btn">Забронировать</a>
-&nbsp;&nbsp;&nbsp;&nbsp;</div>
-&nbsp;&nbsp;</div>
-&nbsp;&nbsp;<div class="hotel-card">
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&auto=format&fit=crop&q=80" alt="КАНЫКЕЙ">
-&nbsp;&nbsp;&nbsp;&nbsp;<div class="info">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3>Гостевой дом "КАНЫКЕЙ"</h3>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Чистые уютные номера • Домашняя кухня</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="price">от 3 000 сом / ночь</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wa.me/996709100020" class="btn">Забронировать</a>
-&nbsp;&nbsp;&nbsp;&nbsp;</div>
-&nbsp;&nbsp;</div>
-&nbsp;&nbsp;<div class="hotel-card">
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&auto=format&fit=crop&q=80" alt="БАЙЭЛ">
-&nbsp;&nbsp;&nbsp;&nbsp;<div class="info">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3>Гостевой дом "БАЙЭЛ"</h3>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Бюджетный вариант • Чисто и комфортно</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="price">от 1 000 сом / ночь</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wa.me/996709100020" class="btn">Забронировать</a>
-&nbsp;&nbsp;&nbsp;&nbsp;</div>
-&nbsp;&nbsp;</div>
-&nbsp;&nbsp;<!--
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лучшие отели и гостевые дома южного берега 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #f0f0f0;
+      background: linear-gradient(to bottom, #0a0a0a, #001020);
+      min-height: 100vh;
+    }
+    /* Кнопка «На главную» */
+    .back-home {
+      position: fixed;
+      top: 20px; left: 20px;
+      background: rgba(0,212,255,0.2);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(0,212,255,0.5);
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+    .back-home:hover {
+      background: rgba(0,212,255,0.4);
+      transform: translateX(-5px);
+      box-shadow: 0 8px 30px rgba(0,212,255,0.4);
+    }
+    /* Шапка */
+    header {
+      height: 100vh;
+      background: url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    header::before {
+      content:""; position:absolute; inset:0;
+      background: rgba(0,0,0,0.58);
+    }
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: #ffffff;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
+      margin-bottom: 20px;
+    }
+    /* Контент */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 120px 20px 100px;
+    }
+    h2 {
+      text-align: center;
+      color: #00e5e5;
+      font-size: 3.4rem;
+      margin-bottom: 70px;
+      letter-spacing: 4px;
+      font-weight: 900;
+      text-shadow: 0 4px 20px rgba(0, 229, 229, 0.4);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 40px;
+    }
+    .hotel-card {
+      background: rgba(25,35,50,0.94);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    }
+    .hotel-card:hover {
+      transform: translateY(-20px);
+      border-color: #00ffff;
+      box-shadow: 0 30px 70px rgba(0,212,255,0.45);
+    }
+    .hotel-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .hotel-card:hover img {
+      transform: scale(1.1);
+    }
+    .info {
+      padding: 28px;
+      text-align: center;
+    }
+    .info h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+      color: #00ffcc;
+      font-weight: 700;
+    }
+    .info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.92;
+      margin-bottom: 16px;
+    }
+    .price {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffff, #00ffcc);
+      color: #000;
+      font-weight: 900;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 35px rgba(37,211,102,0.6);
+    }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0.8;
+      color: #88e0ff;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+      h2 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-home">
+    ← На главную
+  </a>
+
+  <header>
+    <div class="header-content">
+      <h1>ГОСТЕВЫЕ ДОМА</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Лучшие отели и гостевые дома 2025</h2>
+
+    <div class="grid">
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cd483e89e?w=1200&auto=format&fit=crop&q=80" alt="АЛМАЗ HOUSE">
+        <div class="info">
+          <h3>АЛМАЗ HOUSE</h3>
+          <p>5★ • Уютные комнаты • Близко к озеру</p>
+          <div class="price">от 2 500 сом / ночь</div>
+          <a href="https://wa.me/996702703456" class="btn">Забронировать</a>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&auto=format&fit=crop&q=80" alt="КАНЫКЕЙ">
+        <div class="info">
+          <h3>Гостевой дом "КАНЫКЕЙ"</h3>
+          <p>Чистые уютные номера • Домашняя кухня</p>
+          <div class="price">от 3 000 сом / ночь</div>
+          <a href="https://wa.me/996709100020" class="btn">Забронировать</a>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&auto=format&fit=crop&q=80" alt="БАЙЭЛ">
+        <div class="info">
+          <h3>Гостевой дом "БАЙЭЛ"</h3>
+          <p>Бюджетный вариант • Чисто и комфортно</p>
+          <div class="price">от 1 000 сом / ночь</div>
+          <a href="https://wa.me/996709100020" class="btn">Забронировать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности
+  </footer>
+</body>
+</html>
