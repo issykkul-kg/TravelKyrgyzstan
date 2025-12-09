@@ -3,178 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Шоу беркутчи • Боконбаево • Иссык-Куль 2025</title>
-<meta name="description" content="Настоящее шоу с беркутами в Боконбаево. Охота, мастер-классы и фото с орлами. Цены от 8000 сом. Запишитесь в WhatsApp!">
+<title>Шоу беркутчи • Боконбаево • Иссык-Куль</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
-  body {
-    background: linear-gradient(to bottom, #0f172a, #1e293b);
-    color: #fff;
-    margin: 0;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  }
-  .card {
-    background: #1e293b;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-    transition: 0.3s ease;
-  }
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(103, 232, 249, 0.3);
-  }
-  .swiper {
-    height: 450px;
-  }
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .swiper-pagination-bullet {
-    background: rgba(255,255,255,0.4);
-    opacity: 1;
-  }
-  .swiper-pagination-bullet-active {
-    background: #fff;
-    transform: scale(1.4);
-  }
-  .card-body {
-    padding: 25px;
-    text-align: center;
-  }
-  h3 {
-    margin: 0 0 15px;
-    font-size: 1.8em;
-    color: #67e8f9;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  }
-  .price {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #86efac;
-    margin: 15px 0;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  }
-  .price small {
-    display: block;
-    font-size: 0.8em;
-    color: #94a3b8;
-    margin-top: 8px;
-  }
-  .contact {
-    font-size: 1.2em;
-    margin: 15px 0;
-    color: #e2e8f0;
-    line-height: 1.5;
-  }
-  .name {
-    color: #fcd34d;
-    font-weight: bold;
-    font-size: 1.3em;
-  }
-  .btn {
-    display: inline-block;
-    margin: 20px auto 10px;
-    padding: 16px 40px;
-    background: linear-gradient(135deg, #67e8f9, #22d3ee);
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(103, 232, 249, 0.3);
-  }
-  .btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #22d3ee, #67e8f9);
-    box-shadow: 0 6px 20px rgba(103, 232, 249, 0.4);
-  }
-  .btn-bron {
-    background: linear-gradient(135deg, #f472b6, #ec4899);
-    box-shadow: 0 4px 15px rgba(244, 114, 182, 0.3);
-  }
-  .btn-bron:hover {
-    background: linear-gradient(135deg, #ec4899, #f472b6);
-    box-shadow: 0 6px 20px rgba(244, 114, 182, 0.4);
-  }
-  @media (max-width: 768px) {
-    .container {
-      gap: 20px;
-      grid-template-columns: 1fr;
-    }
-    .swiper {
-      height: 300px;
-    }
-    h3 {
-      font-size: 1.5em;
-    }
-  }
+  body{background:linear-gradient(to bottom,#0f172a,#1e293b);color:#fff;margin:0;padding:20px;font-family:Arial,sans-serif}
+  .container{max-width:1200px;margin:auto;display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+  .card{background:#1e293b;border-radius:28px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.7);transition:.3s}
+  .card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(103,232,249,.3)}
+  .swiper{height:460px}
+  .swiper-slide img{width:100%;height:100%;object-fit:cover}
+  .swiper-pagination-bullet{background:rgba(255,255,255,.4)}
+  .swiper-pagination-bullet-active{background:#fff;transform:scale(1.4)}
+  .card-body{padding:28px;text-align:center}
+  h3{margin:0 0 16px;font-size:1.8em;color:#67e8f9;text-shadow:0 2px 5px rgba(0,0,0,.5)}
+  .price{font-size:1.6em;font-weight:bold;color:#86efac;margin:18px 0}
+  .contact{font-size:1.25em;margin:18px 0;color:#e2e8f0;line-height:1.6}
+  .name{color:#fcd34d;font-weight:bold;font-size:1.35em}
+  .btn{display:inline-block;margin:20px auto;padding:17px 45px;background:linear-gradient(135deg,#67e8f9,#22d3ee);color:#0f172a;text-decoration:none;border-radius:50px;font-weight:bold;font-size:1.15em;transition:.3s;box-shadow:0 5px 15px rgba(103,232,249,.4)}
+  .btn:hover{transform:scale(1.05);box-shadow:0 8px 25px rgba(103,232,249,.5)}
 </style>
 </head>
 <body>
 <div class="container">
-  <!-- Мирланов Мерген — Классическое шоу -->
+
+  <!-- Мирланов Мерген -->
   <div class="card">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/klassika-1.jpg" alt="Мирланов Мерген с беркутом в Боконбаево"></div>
-        <!-- Добавляй сюда новые фото: <div class="swiper-slide"><img src="images/mergen-2.jpg" alt="..."></div> -->
+        <div class="swiper-slide"><img src="images/klassika-1.jpg" alt="Мирланов Мерген"></div>
+        <!-- сюда новые фото Мергена -->
       </div>
       <div class="swiper-pagination"></div>
     </div>
     <div class="card-body">
-      <h3>Классическое шоу с Беркутом</h3>
-      <p>Боконбаево • 30–45 мин<br>Охота на лису и зайца<br>Фото и видео включены</p>
-      <div class="price">от 8000 сом до 17000 сом<br><small>группа от 5 чел — скидка 20%</small></div>
+      <h3>Классическое шоу с беркутом</h3>
+      <p>Боконбаево • 30–45 минут<br>Охота на лису и зайца • Фото и видео включены</p>
+      <div class="price">от 8000 до 17000 сом</div>
       <div class="contact">
         <div class="name">Мирланов Мерген</div>
         +996 500 059 988
       </div>
-      <a href="https://wa.me/996500059988?text=Здравствуйте,%20Мерген!%20Хочу%20записаться%20на%20шоу%20беркутчи%20в%20Боконбаево" class="btn">Записаться в WhatsApp</a>
+      <a href="https://wa.me/996500059988?text=Здравствуйте,%20Мерген!%20Хочу%20на%20шоу%20с%20беркутом" class="btn">Написать в WhatsApp</a>
     </div>
   </div>
 
-  <!-- Асылбеков Айдар — Мастер-класс -->
+  <!-- Асылбеков Айдар -->
   <div class="card">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/aidar.jpg" alt="Асылбеков Айдар на мастер-классе с беркутом"></div>
-        <!-- Добавляй сюда новые фото: <div class="swiper-slide"><img src="images/aidar-2.jpg" alt="..."></div> -->
+        <div class="swiper-slide"><img src="images/aidar.jpg" alt="Асылбеков Айдар"></div>
+        <!-- сюда новые фото Айдара -->
       </div>
       <div class="swiper-pagination"></div>
     </div>
     <div class="card-body">
       <h3>Мастер-класс «Стань беркутчи»</h3>
-      <p>Боконбаево • 1,5 часа<br>Держите беркута на руке<br>Для детей и взрослых</p>
-      <div class="price">1500 сом / чел<br><small>группа от 3 чел — скидка 10%</small></div>
+      <p>Боконбаево • 1,5 часа<br>Держите беркута на руке • Для детей и взрослых</p>
+      <div class="price">1500 сом с человека</div>
       <div class="contact">
         <div class="name">Асылбеков Айдар</div>
         +996 702 487 381
       </div>
-      <a href="https://wa.me/996702487381?text=Здравствуйте,%20Айдар!%20Хочу%20на%20мастер-класс%20беркутчи%20в%20Боконбаево" class="btn btn-bron">Записаться в WhatsApp</a>
+      <a href="https://wa.me/996702487381?text=Здравствуйте,%20Айдар!%20Хочу%20на%20мастер-класс" class="btn">Написать в WhatsApp</a>
     </div>
   </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   document.querySelectorAll('.mySwiper').forEach(s => new Swiper(s, {
     loop: true,
-    autoplay: { delay: 4000, disableOnInteraction: false },
+    autoplay: { delay: 4000 },
     pagination: { el: '.swiper-pagination', clickable: true },
-    grabCursor: true,
-    effect: 'fade'  // Плавный переход между фото
+    grabCursor: true
   }));
 </script>
 </body>
