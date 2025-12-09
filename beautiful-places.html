@@ -1,69 +1,228 @@
-<h2 style="text-align:center;color:#00e5e5;font-size:3.4rem;margin-bottom:70px;letter-spacing:4px;font-weight:900">
-  Топ-10 красивых мест южного берега 2025
-</h2>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Топ-10 красивых мест южного берега Иссык-Куля 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #f0f0f0;
+      background: linear-gradient(to bottom, #0a0a0a, #001020);
+      min-height: 100vh;
+    }
+    /* Кнопка «На главную» */
+    .back-home {
+      position: fixed;
+      top: 20px; left: 20px;
+      background: rgba(0,212,255,0.2);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(0,212,255,0.5);
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+    .back-home:hover {
+      background: rgba(0,212,255,0.4);
+      transform: translateX(-5px);
+      box-shadow: 0 8px 30px rgba(0,212,255,0.4);
+    }
 
-<div class="grid">
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1627741797892-9f43e3831337?w=1200&auto=format&fit=crop&q=80" alt="Джеты-Огуз">
-    <div class="info">
-      <h3>Джеты-Огуз — «Семь быков» и «Разбитое сердце»</h3>
-      <p>Красные скалы, горный воздух, 30 минут от берега</p>
+    /* Шапка с твоей фоткой */
+    header {
+      height: 100vh;
+      background: url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    header::before {
+      content:""; position:absolute; inset:0;
+      background: rgba(0,0,0,0.58);
+    }
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: 6px;
+      color: #ffffff;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
+      margin-bottom: 20px;
+    }
+
+    /* Основной контент */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 120px 20px 100px;
+    }
+    h2 {
+      text-align: center;
+      color: #00e5e5;
+      font-size: 3.4rem;
+      margin-bottom: 70px;
+      letter-spacing: 4px;
+      font-weight: 900;
+      text-shadow: 0 4px 20px rgba(0, 229, 229, 0.4);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 40px;
+    }
+    .hotel-card {
+      background: rgba(25,35,50,0.94);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    }
+    .hotel-card:hover {
+      transform: translateY(-20px);
+      border-color: #00ffff;
+      box-shadow: 0 30px 70px rgba(0,212,255,0.45);
+    }
+    .hotel-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .hotel-card:hover img {
+      transform: scale(1.1);
+    }
+    .info {
+      padding: 28px;
+    }
+    .info h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+      color: #00ffcc;
+      font-weight: 700;
+    }
+    .info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0.8;
+      color: #88e0ff;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+      h2 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-home">
+    ← На главную
+  </a>
+
+  <header>
+    <div class="header-content">
+      <h1>КРАСИВЫЕ МЕСТА</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>ТОП-10 КРАСИВЫХ МЕСТ ЮЖНОГО БЕРЕГА 2025</h2>
+
+    <div class="grid">
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1627741797892-9f43e3831337?w=1200&auto=format&fit=crop&q=80" alt="Джеты-Огуз">
+        <div class="info">
+          <h3>Джеты-Огуз — «Семь быков» и «Разбитое сердце»</h3>
+          <p>Красные скалы, горный воздух, 30 минут от берега</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1599641952234-0ec15f5c7455?w=1200&auto=format&fit=crop&q=80" alt="Каньон Сказка">
+        <div class="info">
+          <h3>Каньон «Сказка»</h3>
+          <p>Марсианские пейзажи, разноцветные горы, 20 минут от Тосора</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1632324702665-78d12f9c7d65?w=1200&auto=format&fit=crop&q=80" alt="Барскоонский водопад">
+        <div class="info">
+          <h3>Водопады Барскоон</h3>
+          <p>«Слезы барса», «Чаша Манаса» — мощные потоки с высоты 100 м</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1617113928183-3e3573e3e4a6?w=1200&auto=format&fit=crop&q=80" alt="Солёное озеро">
+        <div class="info">
+          <h3>Мёртвое (солёное) озеро</h3>
+          <p>Лечебная грязь, можно лежать на воде, как в Мёртвом море</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1604426604029-0cf2c5c087c8?w=1200&auto=format&fit=crop&q=80" alt="Боомское ущелье">
+        <div class="info">
+          <h3>Боомское ущелье (перевал Кок-Айрык)</h3>
+          <p>Эпичные виды на озеро сверху, лучший закат</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1623332650234-90e2e3e1e76c?w=1200&auto=format&fit=crop&q=80" alt="Охота с беркутом">
+        <div class="info">
+          <h3>Охота с беркутом в Боконбаево</h3>
+          <p>Традиционное кыргызское шоу, фото с орлом на руке</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1592419816299-1c3c8f2a6c9e?w=1200&auto=format&fit=crop&q=80" alt="Пляж Тосор">
+        <div class="info">
+          <h3>Золотой пляж Тосор</h3>
+          <p>Самый длинный песчаный пляж южного берега</p>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1632465533388-545e2c8c984d?w=1200&auto=format&fit=crop&q=80" alt="Перевал Тосор">
+        <div class="info">
+          <h3>Перевал Тосор (3893 м)</h3>
+          <p>Однодневный трекинг с видом на всё озеро</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1599641952234-0ec15f5c7455?w=1200&auto=format&fit=crop&q=80" alt="Каньон Сказка">
-    <div class="info">
-      <h3>Каньон «Сказка»</h3>
-      <p>Марсианские пейзажи, разноцветные горы, 20 минут от Тосора</p>
-    </div>
-  </div>
-
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1632324702665-78d12f9c7d65?w=1200&auto=format&fit=crop&q=80" alt="Барскоонский водопад">
-    <div class="info">
-      <h3>Водопады Барскоон</h3>
-      <p>«Слезы барса», «Чаша Манаса» — мощные потоки с высоты 100 м</p>
-    </div>
-  </div>
-
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1617113928183-3e3573e3e4a6?w=1200&auto=format&fit=crop&q=80" alt="Солёное озеро">
-    <div class="info">
-      <h3>Мёртвое (солёное) озеро</h3>
-      <p>Лечебная грязь, можно лежать на воде, как в Мёртвом море</p>
-    </div>
-  </div>
-
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1604426604029-0cf2c5c087c8?w=1200&auto=format&fit=crop&q=80" alt="Ущелье Боом">
-    <div class="info">
-      <h3>Боомское ущелье (перевал Кок-Айрык)</h3>
-      <p>Эпичные виды на озеро сверху, лучший закат</p>
-    </div>
-  </div>
-
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1623332650234-90e2e3e1e76c?w=1200&auto=format&fit=crop&q=80" alt="Охота с беркутом">
-    <div class="info">
-      <h3>Охота с беркутом в Боконбаево</h3>
-      <p>Традиционное кыргызское шоу, фото с орлом на руке</p>
-    </div>
-  </div>
-
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1592419816299-1c3c8f2a6c9e?w=1200&auto=format&fit=crop&q=80" alt="Пляж у Тосора">
-    <div class="info">
-      <h3>Золотой пляж Тосор</h3>
-      <p>Самый длинный песчаный пляж южного берега</p>
-    </div>
-  </div>
-
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1632465533388-545e2c8c984d?w=1200&auto=format&fit=crop&q=80" alt="Перевал Тосор">
-    <div class="info">
-      <h3>Перевал Тосор (3893 м)</h3>
-      <p>Однодневный трекинг с видом на всё озеро</p>
-    </div>
-  </div>
-</div>
+  <footer>
+    © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности
+  </footer>
+</body>
+</html>
