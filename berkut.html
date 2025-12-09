@@ -7,18 +7,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
   body{background:#0f172a;color:#fff;margin:0;padding:20px;font-family:Arial,sans-serif}
-  .container{max-width:1200px;margin:auto;display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
-  .card{background:#1e293b;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.6)}
-  .swiper{height:380px}
+  .container{max-width:1200px;margin:auto;display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+  .card{background:#1e293b;border-radius:28px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.7);transition:.3s}
+  .card:hover{transform:translateY(-8px)}
+  .swiper{height:420px}
   .swiper-slide img{width:100%;height:100%;object-fit:cover}
-  .swiper-pagination-bullet{background:rgba(255,255,255,.5)}
-  .swiper-pagination-bullet-active{background:#fff;transform:scale(1.3)}
-  .card-body{padding:20px;text-align:center}
-  h3{margin:0 0 12px;font-size:1.6em;color:#67e8f9}
-  .price{font-size:1.name{color:#fcd34d;font-weight:bold}
-  .contact{font-size:1.1em;margin:12px 0;color:#cbd5e1;line-height:1.5}
-  .btn{display:block;margin:15px auto;padding:15px 30px;background:linear-gradient(90deg,#67e8f9,#22d3ee);color:#0f172a;text-decoration:none;border-radius:50px;font-weight:bold;max-width:260px}
-  .btn-bron{background:linear-gradient(90deg,#f472b6,#ec4899)}
+  .swiper-pagination-bullet{background:rgba(255,255,255,.4)}
+  .swiper-pagination-bullet-active{background:#fff;transform:scale(1.4)}
+  .card-body{padding:25px;text-align:center}
+  h3{margin:0 0 15px;font-size:1.7em;color:#67e8f9}
+  .price{font-size:1.5em;font-weight:bold;color:#86efac;margin:15px 0}
+  .price small{display:block;font-size:0.75em;color:#94a3b8;margin-top:6px}
+  .contact{font-size:1.2em;margin:15px 0;color:#e2e8f0;line-height:1.5}
+  .name{color:#fcd34d;font-weight:bold}
+  .btn{display:block;margin:20px auto 10px;padding:16px 40px;background:linear-gradient(90deg,#67e8f9,#22d3ee);color:#0f172a;text-decoration:none;border-radius:50px;font-weight:bold;font-size:1.1em;max-width:280px}
 </style>
 </head>
 <body>
@@ -33,7 +35,7 @@
     <div class="card-body">
       <h3>Классическое шоу и ночная охота</h3>
       <p>Боконбаево • 30–45 мин (шоу)<br>Декабрь–февраль (ночная охота на волка)</p>
-      <div class="price">Шоу — 1000 сом/чел<br>Ночная охота — от 25 000 сом (до 6 чел)</div>
+      <div class="price">Шоу — 1000 сом/чел<br><small>от 5 чел — 800 сом</small><br>Ночная охота — от 25 000 сом (до 6 чел)</div>
       <div class="contact">
         <div class="name">Мирланов Мерген</div>
         +996 500 059 988
@@ -45,12 +47,12 @@
   <!-- Асылбеков Айдар -->
   <div class="card">
     <div class="swiper mySwiper"><div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/aydar.jpg" alt="Асылбеков Айдар"></div>
+      <div class="swiper-slide"><img src="images/aidar.jpg" alt="Асылбеков Айдар"></div>
       <!-- добавляй сюда ещё фото Айдара -->
     </div><div class="swiper-pagination"></div></div>
     <div class="card-body">
       <h3>Мастер-класс «Стань беркутчи»</h3>
-      <p>1,5 часа • Держите беркута на руке<br>Подходит детям и взрослым • Фото/видео</p>
+      <p>1,5 часа • Держите беркута на руке<br>Фото и видео включены • Для детей и взрослых</p>
       <div class="price">1500 сом / чел</div>
       <div class="contact">
         <div class="name">Асылбеков Айдар</div>
@@ -67,7 +69,8 @@
   document.querySelectorAll('.mySwiper').forEach(s => new Swiper(s,{
     loop:true,
     autoplay:{delay:4000,disableOnInteraction:false},
-    pagination:{el:'.swiper-pagination',clickable:true}
+    pagination:{el:'.swiper-pagination',clickable:true},
+    grabCursor:true
   }));
 </script>
 </body>
