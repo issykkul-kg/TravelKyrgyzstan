@@ -1,53 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-key="title">Южный Берег Иссык-Куля • 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-
-<style>
-  /* Ваш существующий CSS полностью остаётся тем же — просто скопируйте его сюда */
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f0f0f0;min-height:100vh;display:flex;flex-direction:column;}
-  header{min-height:100vh;background:url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-  header::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.4));}
-  .content{position:relative;z-index:2;padding:0 20px;width:100%;}
-  h1{font-size:clamp(2.8rem,9vw,7rem);font-weight:800;letter-spacing:3px;margin-bottom:12px;color:#fff;text-shadow:0 4px 20px rgba(0,212,255,0.5);}
-  .subtitle{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:300;opacity:0.95;margin-bottom:50px;color:#a0f0ff;}
-  .categories{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));max-width:1400px;margin:0 auto;padding:0 20px 60px;}
-  .cat-card{background:rgba(25,35,50,0.92);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,0.25);border-radius:26px;overflow:hidden;text-decoration:none;transition:all .4s ease;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-  .cat-card:hover{transform:translateY(-14px);border-color:#00d4ff;box-shadow:0 0 25px 60px rgba(0,212,255,0.35);}
-  .cat-card img{width:100%;height:190px;object-fit:cover;transition:transform .5s;}
-  .cat-card:hover img{transform:scale(1.1)}
-  .cat-title{padding:22px 16px;text-align:center;font-size:1.4rem;font-weight:700;letter-spacing:1.8px;color:#fff;}
-  .cat-card:hover .cat-title{color:#00ffcc;text-shadow:0 0 20px rgba(0,255,204,0.7);}
-  footer{text-align:center;padding:40px 20px 30px;font-size:0.95rem;opacity:0.9;color:#88e0ff;margin-top:auto;}
-
-  /* Переключатель языков в правом верхнем углу */
-  .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:10px;background:rgba(0,0,0,0.5);padding:8px 12px;border-radius:30px;backdrop-filter:blur(10px);}
-  .lang-switch button{background:none;border:none;color:#fff;font-weight:600;font-size:14px;cursor:pointer;padding:6px 12px;border-radius:20px;transition:.3s;}
-  .lang-switch button.active{background:#00d4ff;color:#000;}
-
-  @media (max-width:768px){
-    header{min-height:90vh}.subtitle{margin-bottom:40px}
-    .categories{gap:18px;padding:0 16px 50px;grid-template-columns:1fr 1fr;}
-    .cat-card img{height:150px}
-    .lang-switch{top:15px;right:15px;padding:6px 10px;}
-  }
-  @media (max-width:480px){
-    .categories{grid-template-columns:1fr;}
-    .cat-card img{height:180px}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title data-key="title">Южный Берег Иссык-Куля • 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f0f0f0;min-height:100vh;display:flex;flex-direction:column;}
+    header{min-height:100vh;background:url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
+    header::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.4));}
+    .content{position:relative;z-index:2;padding:0 20px;width:100%}
+    h1{font-size:clamp(2.8rem,9vw,7rem);font-weight:800;letter-spacing:3px;margin-bottom:12px;color:#fff;text-shadow:0 4px 20px rgba(0,212,255,0.5)}
+    .subtitle{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:300;opacity:0.95;margin-bottom:50px;color:#a0f0ff}
+    .categories{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));max-width:1400px;margin:0 auto;padding:0 20px 60px}
+    .cat-card{background:rgba(25,35,50,0.92);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,0.25);border-radius:26px;overflow:hidden;text-decoration:none;transition:all .4s ease;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .cat-card:hover{transform:translateY(-14px);border-color:#00d4ff;box-shadow:0 20px 40px rgba(0,212,255,0.25)}
+    .cat-card img{width:100%;height:190px;object-fit:cover;transition:transform .5s}
+    .cat-card:hover img{transform:scale(1.1)}
+    .cat-title{padding:22px 16px;text-align:center;font-size:1.4rem;font-weight:700;letter-spacing:1.8px;color:#fff}
+    .cat-card:hover .cat-title{color:#00ffcc;text-shadow:0 0 20px rgba(0,255,204,0.7)}
+    footer{text-align:center;padding:40px 20px 30px;font-size:0.95rem;opacity:0.9;color:#88e0ff;margin-top:auto}
+    .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px;background:rgba(0,0,0,0.6);padding:8px 14px;border-radius:30px;backdrop-filter:blur(12px)}
+    .lang-switch button{background:none;border:none;color:#fff;font-weight:600;font-size:15px;cursor:pointer;padding:6px 14px;border-radius:20px;transition:.3s}
+    .lang-switch button.active{background:#00d4ff;color:#000;font-weight:800}
+    @media (max-width:768px){
+      header{min-height:90vh}
+      .categories{grid-template-columns:1fr 1fr;gap:18px;padding:0 16px 50px}
+      .cat-card img{height:150px}
+    }
+    @media (max-width:480px){
+      .categories{grid-template-columns:1fr}
+      .cat-card img{height:180px}
+    }
+  </style>
 </head>
 <body>
 
-<!-- Переключатель языков -->
 <div class="lang-switch">
   <button data-lang="ru" class="active">РУ</button>
   <button data-lang="en">EN</button>
-  <!-- При желании добавьте ещё: <button data-lang="ky">КЫ</button> -->
 </div>
 
 <header>
@@ -57,27 +50,27 @@
 
     <div class="categories">
       <a href="hotels.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6a?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6a?auto=format&fit=crop&w=800&q=80" alt="Hotels">
         <div class="cat-title" data-key="hotels">ОТЕЛИ</div>
       </a>
       <a href="guest-houses.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Guest houses">
         <div class="cat-title" data-key="guest-houses">ГОСТЕВЫЕ ДОМА</div>
       </a>
       <a href="yurt-camps.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1504280390367-361ea3373a5b?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1504280390367-361ea3373a5b?auto=format&fit=crop&w=800&q=80" alt="Yurt camps">
         <div class="cat-title" data-key="yurt-camps">ЮРТОЧНЫЕ ЛАГЕРЯ</div>
       </a>
       <a href="berkut.html" class="cat-card">
-        <img src="images/klassika-1.jpg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/images/klassika-1.jpg" alt="Eagle hunting">
         <div class="cat-title" data-key="berkut">ОХОТА С БЕРКУТОМ</div>
       </a>
       <a href="beautiful-places.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="Beautiful places">
         <div class="cat-title" data-key="places">КРАСИВЫЕ МЕСТА</div>
       </a>
       <a href="tours.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Tours">
         <div class="cat-title" data-key="tours">ТУРЫ</div>
       </a>
     </div>
@@ -89,7 +82,6 @@
   +996 709 100 020 · +996 702 703 456
 </footer>
 
-<!-- Словарь переводов -->
 <script type="text/json" id="translations">
 {
   "ru": {
@@ -116,45 +108,26 @@
     "tours": "TOURS",
     "footer": "© 2025 Southern Shore of Issyk-Kul · Bokonbaevo and surroundings<br>+996 709 100 020 · +996 702 703 456"
   }
-  /* При желании добавьте "ky": { ... кыргызский перевод ... } */
 }
 </script>
 
 <script>
-  const translations = JSON.parse(document.getElementById('translations').textContent);
-  const langButtons = document.querySelectorAll('.lang-switch button');
-  const html = document.documentElement;
+  const trans = JSON.parse(document.getElementById('translations').textContent);
+  const buttons = document.querySelectorAll('.lang-switch button');
 
-  function setLanguage(lang) {
-    // меняем атрибут lang у <html>
-    html.lang = lang;
-
-    // меняем title страницы
-    document.title = translations[lang]['title'] || translations['ru']['title'];
-
-    // переводим все элементы с data-key
+  function switchLang(lang) {
+    document.documentElement.lang = lang;
+    document.title = trans[lang].title;
     document.querySelectorAll('[data-key]').forEach(el => {
-      const key = el.getAttribute('data-key');
-      if (translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
-      }
+      const key = el.dataset.key;
+      if (trans[lang][key]) el.innerHTML = trans[lang][key];
     });
-
-    // подсвечиваем активную кнопку
-    langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-
-    // сохраняем выбор пользователя
-    localStorage.setItem('preferred-lang', lang);
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    localStorage.setItem('lang', lang);
   }
 
-  // клик по кнопкам
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-  });
-
-  // при загрузке страницы
-  const savedLang = localStorage.getItem('preferred-lang') || 'ru';
-  setLanguage(savedLang);
+  buttons.forEach(b => b.addEventListener('click', () => switchLang(b.dataset.lang)));
+  switchLang(localStorage.getItem('lang') || 'ru');
 </script>
 </body>
 </html>
