@@ -4,20 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Южный берег Иссык-Куля • 2025</title>
-
   <!-- SEO -->
   <meta name="description" content="Южный берег Иссык-Куля — отели, гостевые дома, юрты, туры, шоу беркутчи и красивые места Боконбаево и окрестностей.">
   <meta name="keywords" content="Иссык-Куль, Южный берег, Боконбаево, отели, юрты, туры, беркутчи, Кыргызстан">
   <meta name="author" content="South Issyk-Kul Travel">
-
   <!-- OpenGraph -->
   <meta property="og:title" content="Южный берег Иссык-Куля">
   <meta property="og:description" content="Отели, юрты, туры и шоу беркутчи на южном берегу Иссык-Куля">
   <meta property="og:type" content="website">
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{
@@ -28,7 +24,6 @@
       display:flex;
       flex-direction:column;
     }
-
     header{
       min-height:100vh;
       background:url('https://thumbs.dreamstime.com/b/shore-lake-issyk-kul-kyrgyzstan-beautiful-southern-summer-day-90310873.jpg') center/cover no-repeat;
@@ -38,16 +33,13 @@
       text-align:center;
       position:relative;
     }
-
     header::before{
       content:"";
       position:absolute;
       inset:0;
       background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,212,255,.35));
     }
-
     .content{position:relative;z-index:2;padding:0 20px;width:100%}
-
     h1{
       font-size:clamp(2.6rem,8vw,6rem);
       font-weight:800;
@@ -56,14 +48,12 @@
       color:#ffb000;
       text-shadow:0 6px 30px rgba(0,0,0,.6)
     }
-
     .subtitle{
       font-size:clamp(1.1rem,3.5vw,1.7rem);
       font-weight:300;
       margin-bottom:40px;
       color:#e6ffff
     }
-
     .cta{
       display:inline-block;
       padding:14px 34px;
@@ -75,19 +65,21 @@
       margin-bottom:60px;
       box-shadow:0 12px 30px rgba(255,140,0,.45);
     }
-
     .cta:hover{background:#ff6a00}
 
+    /* Аккуратный и ровный grid для карточек */
     .categories{
       display:grid;
       gap:30px;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
       max-width:1400px;
       margin:0 auto;
       padding-bottom:80px;
+      justify-items:center; /* центрируем все карточки по горизонтали */
     }
-
     .cat-card{
+      width:100%;
+      max-width:380px; /* фиксированная максимальная ширина — все карточки одинаковые */
       background:rgba(255,255,255,.9);
       border-radius:28px;
       overflow:hidden;
@@ -95,18 +87,15 @@
       transition:.4s;
       box-shadow:0 14px 35px rgba(0,0,0,.25);
     }
-
     .cat-card:hover{
       transform:translateY(-14px);
       box-shadow:0 26px 55px rgba(255,140,0,.45);
     }
-
     .cat-card img{
       width:100%;
       height:210px;
       object-fit:cover;
     }
-
     .cat-title{
       padding:22px;
       font-size:1.4rem;
@@ -122,14 +111,12 @@
       font-weight:600;
       line-height:1.8;
     }
-
     footer{
       text-align:center;
       padding:30px 20px;
       font-size:.95rem;
       background:#dfffff;
     }
-
     .lang-switch{
       position:fixed;
       top:20px;right:20px;
@@ -139,34 +126,39 @@
       display:flex;gap:6px;
       z-index:100;
     }
-
     .lang-switch button{
       background:none;border:none;cursor:pointer;
       font-weight:600;padding:6px 14px;border-radius:20px;
     }
-
     .lang-switch .active{
       background:#00d4ff;color:#fff;font-weight:800;
     }
 
+    /* Адаптив */
+    @media(max-width:1024px){
+      .categories{gap:25px;}
+    }
     @media(max-width:768px){
-      .cat-card img{height:180px}
+      .categories{grid-template-columns:repeat(2, 1fr);gap:20px;}
+      .cat-card img{height:180px;}
+    }
+    @media(max-width:480px){
+      .categories{grid-template-columns:1fr;gap:20px;}
+      .cat-card{max-width:340px;}
+      .cat-card img{height:200px;}
     }
   </style>
 </head>
 <body>
-
 <div class="lang-switch">
   <button data-lang="ru" class="active">РУ</button>
   <button data-lang="en">EN</button>
 </div>
-
 <header>
   <div class="content">
     <h1 data-key="main">ЮЖНЫЙ БЕРЕГ</h1>
     <div class="subtitle" data-key="sub">Отдых, природа и культура Иссык-Куля</div>
     <a href="https://wa.me/996709100020" class="cta">Связаться в WhatsApp</a>
-
     <div class="categories">
       <a href="hotels.html" class="cat-card"><img loading="lazy" src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/154413592.jpg"><div class="cat-title">ОТЕЛИ</div></a>
       <a href="guest-houses.html" class="cat-card"><img loading="lazy" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/495075256.jpg"><div class="cat-title">ГОСТЕВЫЕ ДОМА</div></a>
@@ -177,17 +169,14 @@
     </div>
   </div>
 </header>
-
 <section class="trust">
   ✔ Проверенные места<br>
   ✔ Местные гиды<br>
   ✔ Поддержка туристов 24/7
 </section>
-
 <footer>
   © 2025 Южный берег Иссык-Куля · Боконбаево и окрестности<br>
   +996 709 100 020 · +996 702 703 456
 </footer>
-
 </body>
 </html>
