@@ -1,89 +1,239 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Туры и экскурсии — Южный берег Иссык-Куль</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Туры и экскурсии • Южный Берег Иссык-Куля • 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Тот же CSS, что и выше — просто копипаст */
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;color:#f0f0f0;background:linear-gradient(to bottom,#0a0a0a,#001020);min-height:100vh;}
-    header{height:100vh;background:url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;}
-    header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.58);}
-    .content{position:relative;z-index:2;padding:0 20px;}
-    h1{font-size:clamp(3rem,10vw,7rem);font-weight:800;letter-spacing:5px;color:#fff;text-shadow:0 4px 30px rgba(0,212,255,.6);margin-bottom:20px;}
-    .subtitle{font-size:1.6rem;opacity:.95;margin-bottom:60px;color:#a0f8ff;}
-    .back-home{position:fixed;top:20px;left:20px;background:rgba(0,212,255,.2);backdrop-filter:blur(12px);color:#fff;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:10px;border:1px solid rgba(0,212,255,.5);z-index:1000;transition:all .3s;}
-    .back-home:hover{background:rgba(0,212,255,.4);transform:translateX(-5px);box-shadow:0 8px 30px rgba(0,212,255,.4);}
-    .section{padding:120px 20px 100px;max-width:1300px;margin:0 auto;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px;margin-top:50px;}
-    .card{background:rgba(25,35,50,.94);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,.3);border-radius:28px;overflow:hidden;transition:all .5s;box-shadow:0 12px 50px rgba(0,0,0,.6);}
-    .card:hover{transform:translateY(-20px);border-color:#00eeff;box-shadow:0 30px 80px rgba(0,212,255,.4);}
-    .card img{width:100%;height:280px;object-fit:cover;}
-    .card-body{padding:30px;text-align:center;}
-    .card-body h3{font-size:1.7rem;margin-bottom:14px;color:#00ffcc;}
-    .card-body p{line-height:1.6;opacity:0.9;margin-bottom:20px;}
-    .price{background:linear-gradient(90deg,#00d4ff,#00ffcc);color:#000;font-weight:800;padding:10px 24px;border-radius:30px;font-size:1.1rem;}
-    footer{text-align:center;padding:60px 20px;opacity:0.8;color:#88e0ff;}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f0f8ff;
+      color:#003366;
+      min-height:100vh;
+      padding-top:80px;
+    }
+    body::before{
+      content:""; position:fixed; inset:0;
+      background:linear-gradient(to bottom,rgba(240,248,255,0.9),rgba(224,255,255,0.8)),
+      url('https://c8.alamy.com/comp/PT3PMT/beautiful-southern-shore-of-lake-issyk-kul-in-the-summer-day-kyrgyzstan-PT3PMT.jpg') center/cover no-repeat;
+      z-index:-1;
+    }
+    .back-btn{
+      position:fixed;
+      top:20px;
+      left:20px;
+      z-index:999;
+      background:#00d4ff;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:50px;
+      font-weight:600;
+      font-size:1rem;
+      text-decoration:none;
+      box-shadow:0 4px 15px rgba(0,212,255,0.4);
+      transition:all .3s;
+    }
+    .back-btn:hover{
+      background:#ff8c00;
+      transform:scale(1.05);
+      box-shadow:0 8px 25px rgba(255,140,0,0.4);
+    }
+    .back-btn::before{content:"← ";font-size:1.3em}
+    header{
+      text-align:center;
+      padding:60px 20px 40px;
+    }
+    h1{
+      font-size:clamp(3rem,10vw,6rem);
+      color:#ff8c00;
+      text-shadow:0 4px 20px rgba(255,215,0,0.6);
+      margin-bottom:20px;
+    }
+    .subtitle{
+      font-size:1.6rem;
+      color:#006666;
+      margin-bottom:40px;
+    }
+    .container{
+      max-width:1400px;
+      margin:0 auto;
+      padding:40px 20px 80px;
+    }
+    h2{
+      text-align:center;
+      color:#006666;
+      font-size:3rem;
+      margin-bottom:60px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:40px;
+    }
+    .tour-card{
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(0,212,255,0.6);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 15px 40px rgba(0,0,0,0.2);
+      transition:.4s;
+    }
+    .tour-card:hover{transform:translateY(-12px)}
+    .tour-card img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      transition:transform .6s;
+    }
+    .tour-card:hover img{transform:scale(1.1)}
+    .card-body{
+      padding:30px;
+      text-align:center;
+    }
+    .card-body h3{
+      font-size:1.7rem;
+      color:#006666;
+      margin-bottom:14px;
+    }
+    .card-body p{
+      line-height:1.6;
+      margin-bottom:20px;
+      color:#003366;
+    }
+    .price{
+      display:inline-block;
+      background:#ff8c00;
+      color:#fff;
+      font-weight:800;
+      padding:10px 24px;
+      border-radius:30px;
+      font-size:1.1rem;
+      margin-bottom:20px;
+    }
+    .btn{
+      display:inline-block;
+      background:linear-gradient(135deg,#00d4ff,#22d3ee);
+      color:#fff;
+      font-weight:700;
+      padding:14px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      font-size:1.1rem;
+      box-shadow:0 8px 25px rgba(0,212,255,0.4);
+      transition:.3s;
+    }
+    .btn:hover{background:#ff8c00;transform:scale(1.08)}
+    footer{
+      text-align:center;
+      padding:60px 20px;
+      background:#e0ffff;
+      color:#006666;
+      font-size:0.95rem;
+    }
+    @media(max-width:768px){
+      .grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
+<a href="index.html" class="back-btn">На главную</a>
 
-  <a href="index.html" class="back-home">
-    ← На главную
-  </a>
+<header>
+  <h1>ТУРЫ И ЭКСКУРСИИ</h1>
+  <div class="subtitle">Лучшие маршруты южного берега Иссык-Куля 2025</div>
+</header>
 
-  <header>
-    <div class="content">
-      <h1>ТУРЫ И ЭКСКУРСИИ</h1>
-      <div class="subtitle">Лучшие маршруты южного берега Иссык-Куля 2025</div>
-    </div>
-  </header>
-
-  <section class="section">
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80" alt="Конный тур">
-        <div class="card-body">
-          <h3>Конный тур в каньон Сказка</h3>
-          <p>3–5 часов · обед у местных · фото-стопы<br>Лошади подготовленные, инструктор</p>
-          <div class="price">от 2 500 сом / чел</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=1200&q=80" alt="Джип">
-        <div class="card-body">
-          <h3>Джип-тур «Джеты-Огуз + Барскоон»</h3>
-          <p>Полный день · водопады · обед в юрте<br>Toyota Land Cruiser / Delica</p>
-          <div class="price">5 500 сом / чел (группа 4–6)</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519904981064-b0ef1b3b6a38?w=1200&q=80" alt="Катер">
-        <div class="card-body">
-          <h3>Катер по Иссык-Кулю</h3>
-          <p>1 час · до 10 человек<br>Купание в открытом озере, фотосессия</p>
-          <div class="price">12 000 сом / катер</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1559827260-dc8439a7f2b2?w=1200&q=80" alt="Треккинг">
-        <div class="card-body">
-          <h3>Треккинг к леднику Барскоон</h3>
-          <p>8–10 часов · перекус · гид<br>Высота 3900 м</p>
-          <div class="price">4 800 сом / чел</div>
-        </div>
+<div class="container">
+  <h2>Популярные туры и экскурсии</h2>
+  <div class="grid">
+    <div class="tour-card">
+      <img src="https://central-asia.guide/wp-content/uploads/2023/01/Issyk-Kul-south-side-Alma-Luu-yurt-camp-1024x682.jpg" alt="Конный тур в каньон Сказка">
+      <div class="card-body">
+        <h3>Конный тур в каньон Сказка</h3>
+        <p>3–5 часов • Обед в юрте • Фото-стопы • Подготовленные лошади</p>
+        <div class="price">от 2 500 сом / чел</div>
+        <a href="https://wa.me/996709100020?text=Хочу конный тур в Сказку" class="btn">Забронировать</a>
       </div>
     </div>
-  </section>
 
-  <footer>
-    © 2025 Южный Берег Иссык-Куля · Все права защищены
- 2025
-  </footer>
+    <div class="tour-card">
+      <img src="https://silkroadexplore.com/wp-content/uploads/2020/07/Jeti-Oguz-Gorge.jpg" alt="Джип-тур Джеты-Огуз + Барскоон">
+      <div class="card-body">
+        <h3>Джип-тур «Джеты-Огуз + Барскоон»</h3>
+        <p>Полный день • Водопады • Обед в юрте • 4x4 джип</p>
+        <div class="price">от 5 500 сом / чел (группа 4–6)</div>
+        <a href="https://wa.me/996709100020?text=Джип-тур Джеты-Огуз" class="btn">Забронировать</a>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://ak-sai.com/wp-content/uploads/boat-cruise-issyk-kul.jpg" alt="Катер по Иссык-Кулю">
+      <div class="card-body">
+        <h3>Катер по Иссык-Кулю</h3>
+        <p>1 час • До 10 человек • Купание в открытом озере</p>
+        <div class="price">от 12 000 сом / катер</div>
+        <a href="https://wa.me/996709100020?text=Катер на час" class="btn">Забронировать</a>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://central-asia.guide/wp-content/uploads/2020/07/Barskoon-waterfall.jpg" alt="Треккинг к леднику Барскоон">
+      <div class="card-body">
+        <h3>Треккинг к леднику Барскоон</h3>
+        <p>8–10 часов • Перекус • Гид • Высота до 3900 м</p>
+        <div class="price">от 4 800 сом / чел</div>
+        <a href="https://wa.me/996709100020?text=Треккинг Барскоон" class="btn">Забронировать</a>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan.jpg" alt="Шоу охоты с беркутом">
+      <div class="card-body">
+        <h3>Шоу охоты с беркутом</h3>
+        <p>30–45 мин • Фото с орлом • Охота на зайца/лису</p>
+        <div class="price">от 8 000 сом / группа</div>
+        <a href="berkut.html" class="btn">Подробнее и бронирование</a>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://central-asia.guide/wp-content/uploads/2020/07/Dead-Lake-Tuz-Kol-Issyk-Kul.jpg" alt="Солёное озеро Туз-Кёль">
+      <div class="card-body">
+        <h3>Солёное (Мёртвое) озеро</h3>
+        <p>Лечебная грязь • Плавание как в Мёртвом море • Релакс</p>
+        <div class="price">от 1 500 сом / трансфер + вход</div>
+        <a href="https://wa.me/996709100020?text=Тур на солёное озеро" class="btn">Забронировать</a>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/69/46/bel-tam-seaside-yurt.jpg?w=900&h=500&s=1" alt="Ночь в юрте на берегу">
+      <div class="card-body">
+        <h3>Ночь в юрте на берегу</h3>
+        <p>Ужин/завтрак • Закаты • Аутентично</p>
+        <div class="price">от 4 000 сом / чел</div>
+        <a href="yurt-camps.html" class="btn">Подробнее</a>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <img src="https://central-asia.guide/wp-content/uploads/2023/07/Tosor-Pass-Kyrgyzstan.jpg" alt="Панорама Шатылы">
+      <div class="card-body">
+        <h3>Панорама Шатылы (трекинг)</h3>
+        <p>2–3 часа • Вид на всё озеро • Фото</p>
+        <div class="price">от 2 000 сом / чел</div>
+        <a href="https://wa.me/996709100020?text=Панорама Шатылы" class="btn">Забронировать</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
+  +996 709 100 020 · +996 702 703 456
+</footer>
 </body>
 </html>
