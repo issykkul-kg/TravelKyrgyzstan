@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лучшие отели • Южный Берег Иссык-Куля • 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{
@@ -75,18 +77,19 @@
       overflow:hidden;
       box-shadow:0 15px 40px rgba(0,0,0,0.2);
       transition:.4s;
+      display:flex;
+      flex-direction:column;
     }
     .hotel-card:hover{transform:translateY(-12px)}
-    .hotel-card img{
-      width:100%;
-      height:260px;
-      object-fit:cover;
-      transition:transform .6s;
-    }
-    .hotel-card:hover img{transform:scale(1.1)}
+    .swiper{height:460px}
+    .swiper-slide img{width:100%;height:100%;object-fit:cover}
     .info{
       padding:28px;
       text-align:center;
+      flex-grow:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
     .info h3{
       font-size:1.55rem;
@@ -131,19 +134,63 @@
     }
     @media(max-width:768px){
       .grid{grid-template-columns:1fr}
+      .swiper{height:360px}
     }
   </style>
 </head>
 <body>
 <a href="index.html" class="back-btn">На главную</a>
-
 <header>
   <h1>ОТЕЛИ</h1>
 </header>
-
 <div class="container">
   <h2>Лучшие отели и апартаменты южного берега 2025</h2>
   <div class="grid">
+
+    <!-- Ton Marina Apart-Hotel с 28 фото -->
+    <div class="hotel-card">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina 1" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="Ton Marina 2" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-3.jpg" alt="Ton Marina 3" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-4.jpg" alt="Ton Marina 4" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-5.jpg" alt="Ton Marina 5" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-6.jpg" alt="Ton Marina 6" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-7.jpg" alt="Ton Marina 7" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-8.jpg" alt="Ton Marina 8" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-9.jpg" alt="Ton Marina 9" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-10.jpg" alt="Ton Marina 10" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-11.jpg" alt="Ton Marina 11" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-12.jpg" alt="Ton Marina 12" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-13.jpg" alt="Ton Marina 13" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-14.jpg" alt="Ton Marina 14" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-15.jpg" alt="Ton Marina 15" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-16.jpg" alt="Ton Marina 16" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-17.jpg" alt="Ton Marina 17" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-18.jpg" alt="Ton Marina 18" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-19.jpg" alt="Ton Marina 19" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-20.jpg" alt="Ton Marina 20" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-21.jpg" alt="Ton Marina 21" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-22.jpg" alt="Ton Marina 22" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-23.jpg" alt="Ton Marina 23" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-24.jpg" alt="Ton Marina 24" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-25.jpg" alt="Ton Marina 25" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-26.jpg" alt="Ton Marina 26" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-27.jpg" alt="Ton Marina 27" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-28.jpg" alt="Ton Marina 28" loading="lazy"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="info">
+        <h3>Ton Marina Apart-Hotel</h3>
+        <p>Село Тон • Современные апартаменты с кухней и балконами<br>Собственный пирс и пляж • Прямой вид на Иссык-Куль • Wi-Fi</p>
+        <div class="price">от 8000 до 20000 сом / ночь</div>
+        <a href="https://wa.me/996709100020?text=Здравствуйте! Хочу забронировать номер в Ton Marina" class="btn">Забронировать в WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Остальные отели (оставил как было, но можно заменить фото на свои) -->
     <div class="hotel-card">
       <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/69/46/bel-tam-seaside-yurt.jpg?w=900&h=500&s=1" alt="Tong Marina Apart-Hotel">
       <div class="info">
@@ -153,7 +200,6 @@
         <a href="https://wa.me/996700123456" class="btn">Забронировать в WhatsApp</a>
       </div>
     </div>
-
     <div class="hotel-card">
       <img src="https://c8.alamy.com/comp/2AGAC62/lake-issyk-kul-kyrgyzstan-empty-sandy-beach-on-the-southern-shore-of-the-lake-2AGAC62.jpg" alt="Elestet Issyk-Kul">
       <div class="info">
@@ -163,7 +209,6 @@
         <a href="https://wa.me/996555987654" class="btn">Забронировать в WhatsApp</a>
       </div>
     </div>
-
     <div class="hotel-card">
       <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/21/3c/bel-tam-seaside-yurt.jpg?w=700&h=-1&s=1" alt="Bel Tam Seaside Yurt Camp">
       <div class="info">
@@ -173,7 +218,6 @@
         <a href="https://wa.me/996709100020" class="btn">Забронировать в WhatsApp</a>
       </div>
     </div>
-
     <div class="hotel-card">
       <img src="https://c8.alamy.com/comp/PT3PMT/beautiful-southern-shore-of-lake-issyk-kul-in-the-summer-day-kyrgyzstan-PT3PMT.jpg" alt="Apricot Guest House">
       <div class="info">
@@ -183,7 +227,6 @@
         <a href="https://wa.me/996702703456" class="btn">Забронировать в WhatsApp</a>
       </div>
     </div>
-
     <div class="hotel-card">
       <img src="https://www.shutterstock.com/image-photo/beautiful-southern-shore-lake-issykkul-260nw-496493437.jpg" alt="Almaluu Yurt Camp">
       <div class="info">
@@ -193,12 +236,25 @@
         <a href="https://wa.me/996777123456" class="btn">Забронировать в WhatsApp</a>
       </div>
     </div>
+
   </div>
 </div>
-
 <footer>
   © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
   +996 709 100 020 · +996 702 703 456
 </footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.mySwiper').forEach(swiper => {
+    new Swiper(swiper, {
+      loop: true,
+      autoplay: { delay: 4000 },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      grabCursor: true
+    });
+  });
+</script>
 </body>
 </html>
