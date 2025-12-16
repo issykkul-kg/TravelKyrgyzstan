@@ -54,38 +54,52 @@
       margin-bottom:40px;
       color:#e6ffff
     }
-    .cta{
+
+    /* Кнопка WhatsApp в левом верхнем углу */
+    .whatsapp-btn{
+      position:fixed;
+      top:20px;
+      left:20px;
+      z-index:100;
       display:inline-block;
-      padding:14px 34px;
-      background:#ff8c00;
+      padding:12px 28px;
+      background:#25D366;
       color:#fff;
       border-radius:40px;
       font-weight:700;
       text-decoration:none;
-      margin-bottom:60px;
-      box-shadow:0 12px 30px rgba(255,140,0,.45);
+      box-shadow:0 8px 20px rgba(37,211,102,.4);
+      transition:.3s;
     }
-    .cta:hover{background:#ff6a00}
+    .whatsapp-btn:hover{
+      background:#128C7E;
+      transform:scale(1.05);
+    }
+    .whatsapp-btn svg{
+      width:24px;height:24px;vertical-align:middle;margin-right:8px;
+    }
 
-    /* Аккуратный и ровный grid для карточек */
+    /* Основной grid */
     .categories{
       display:grid;
       gap:30px;
-      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns:repeat(3, minmax(320px, 380px));
       max-width:1400px;
       margin:0 auto;
-      padding-bottom:80px;
-      justify-items:center; /* центрируем все карточки по горизонтали */
+      padding:0 20px 80px;
+      justify-content:center;
     }
+
     .cat-card{
       width:100%;
-      max-width:380px; /* фиксированная максимальная ширина — все карточки одинаковые */
       background:rgba(255,255,255,.9);
       border-radius:28px;
       overflow:hidden;
       text-decoration:none;
       transition:.4s;
       box-shadow:0 14px 35px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
     }
     .cat-card:hover{
       transform:translateY(-14px);
@@ -93,7 +107,7 @@
     }
     .cat-card img{
       width:100%;
-      height:210px;
+      height:240px;
       object-fit:cover;
     }
     .cat-title{
@@ -102,6 +116,10 @@
       font-weight:700;
       color:#006666;
       text-align:center;
+      flex-grow:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .trust{
@@ -117,66 +135,149 @@
       font-size:.95rem;
       background:#dfffff;
     }
+
+    /* Переключатель языков — правый верхний угол */
     .lang-switch{
       position:fixed;
       top:20px;right:20px;
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.85);
       padding:8px 14px;
       border-radius:30px;
       display:flex;gap:6px;
       z-index:100;
+      backdrop-filter:blur(4px);
     }
     .lang-switch button{
       background:none;border:none;cursor:pointer;
       font-weight:600;padding:6px 14px;border-radius:20px;
+      transition:.3s;
     }
     .lang-switch .active{
       background:#00d4ff;color:#fff;font-weight:800;
     }
 
     /* Адаптив */
-    @media(max-width:1024px){
-      .categories{gap:25px;}
+    @media (max-width: 1023px) {
+      .categories {
+        grid-template-columns:repeat(2, minmax(320px, 380px));
+        gap:25px;
+      }
     }
-    @media(max-width:768px){
-      .categories{grid-template-columns:repeat(2, 1fr);gap:20px;}
-      .cat-card img{height:180px;}
-    }
-    @media(max-width:480px){
-      .categories{grid-template-columns:1fr;gap:20px;}
-      .cat-card{max-width:340px;}
-      .cat-card img{height:200px;}
+    @media (max-width: 767px) {
+      .categories {
+        grid-template-columns:1fr;
+        gap:20px;
+        padding:0 15px 80px;
+      }
+      .cat-card img {
+        height:220px;
+      }
+      .whatsapp-btn{
+        padding:10px 20px;
+        font-size:0.9rem;
+      }
     }
   </style>
 </head>
 <body>
+
+<!-- Кнопка WhatsApp в левом верхнем углу -->
+<a href="https://wa.me/996709100020" class="whatsapp-btn">
+  <svg fill="#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.884 3.488"/></svg>
+  <span class="wa-text">Связаться в WhatsApp</span>
+</a>
+
+<!-- Переключатель языков -->
 <div class="lang-switch">
   <button data-lang="ru" class="active">РУ</button>
   <button data-lang="en">EN</button>
 </div>
+
 <header>
   <div class="content">
-    <h1 data-key="main">ЮЖНЫЙ БЕРЕГ</h1>
-    <div class="subtitle" data-key="sub">Отдых, природа и культура Иссык-Куля</div>
-    <a href="https://wa.me/996709100020" class="cta">Связаться в WhatsApp</a>
+    <h1 class="translatable" data-ru="ЮЖНЫЙ БЕРЕГ" data-en="SOUTH ISSYK-KUL">ЮЖНЫЙ БЕРЕГ</h1>
+    <div class="subtitle translatable" data-ru="Отдых, природа и культура Иссык-Куля" data-en="Rest, nature and culture of Issyk-Kul">Отдых, природа и культура Иссык-Куля</div>
+
     <div class="categories">
-      <a href="hotels.html" class="cat-card"><img loading="lazy" src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/154413592.jpg"><div class="cat-title">ОТЕЛИ</div></a>
-      <a href="guest-houses.html" class="cat-card"><img loading="lazy" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/495075256.jpg"><div class="cat-title">ГОСТЕВЫЕ ДОМА</div></a>
-      <a href="yurt-camps.html" class="cat-card"><img loading="lazy" src="https://central-asia.guide/wp-content/uploads/2023/01/Issyk-Kul-south-side-Alma-Luu-yurt-camp-1024x682.jpg"><div class="cat-title">ЮРТЫ</div></a>
-      <a href="berkut.html" class="cat-card"><img loading="lazy" src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan.jpg"><div class="cat-title">БЕРКУТЧИ</div></a>
-      <a href="beautiful-places.html" class="cat-card"><img loading="lazy" src="https://nomads-life.com/wp-content/uploads/2024/02/Skazrf-canyon-in-Kyrgyzstan.jpg"><div class="cat-title">МЕСТА</div></a>
-      <a href="tours.html" class="cat-card"><img loading="lazy" src="https://www.asiaodysseytravel.com/images/asia-tours/central-asia-tours/song-kul-lake-700-8.jpg"><div class="cat-title">ТУРЫ</div></a>
+      <a href="hotels.html" class="cat-card">
+        <img loading="lazy" src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/154413592.jpg" alt="Hotels">
+        <div class="cat-title translatable" data-ru="ОТЕЛИ" data-en="HOTELS">ОТЕЛИ</div>
+      </a>
+      <a href="guest-houses.html" class="cat-card">
+        <img loading="lazy" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/495075256.jpg" alt="Guest houses">
+        <div class="cat-title translatable" data-ru="ГОСТЕВЫЕ ДОМА" data-en="GUEST HOUSES">ГОСТЕВЫЕ ДОМА</div>
+      </a>
+      <a href="yurt-camps.html" class="cat-card">
+        <img loading="lazy" src="https://central-asia.guide/wp-content/uploads/2023/01/Issyk-Kul-south-side-Alma-Luu-yurt-camp-1024x682.jpg" alt="Yurt camps">
+        <div class="cat-title translatable" data-ru="ЮРТЫ" data-en="YURTS">ЮРТЫ</div>
+      </a>
+      <a href="berkut.html" class="cat-card">
+        <img loading="lazy" src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan.jpg" alt="Berkutchi">
+        <div class="cat-title translatable" data-ru="БЕРКУТЧИ" data-en="EAGLE HUNTERS">БЕРКУТЧИ</div>
+      </a>
+      <a href="beautiful-places.html" class="cat-card">
+        <img loading="lazy" src="https://nomads-life.com/wp-content/uploads/2024/02/Skazrf-canyon-in-Kyrgyzstan.jpg" alt="Beautiful places">
+        <div class="cat-title translatable" data-ru="МЕСТА" data-en="PLACES">МЕСТА</div>
+      </a>
+      <a href="tours.html" class="cat-card">
+        <img loading="lazy" src="https://www.asiaodysseytravel.com/images/asia-tours/central-asia-tours/song-kul-lake-700-8.jpg" alt="Tours">
+        <div class="cat-title translatable" data-ru="ТУРЫ" data-en="TOURS">ТУРЫ</div>
+      </a>
     </div>
   </div>
 </header>
-<section class="trust">
+
+<section class="trust translatable" data-ru="✔ Проверенные места<br>✔ Местные гиды<br>✔ Поддержка туристов 24/7" data-en="✔ Verified places<br>✔ Local guides<br>✔ 24/7 tourist support">
   ✔ Проверенные места<br>
   ✔ Местные гиды<br>
   ✔ Поддержка туристов 24/7
 </section>
-<footer>
+
+<footer class="translatable" data-ru="© 2025 Южный берег Иссык-Куля · Боконбаево и окрестности<br>+996 709 100 020 · +996 702 703 456" data-en="© 2025 South Issyk-Kul · Bokonbaevo and surroundings<br>+996 709 100 020 · +996 702 703 456">
   © 2025 Южный берег Иссык-Куля · Боконбаево и окрестности<br>
   +996 709 100 020 · +996 702 703 456
 </footer>
+
+<script>
+  // Объект с переводами
+  const translations = {
+    ru: {
+      waText: "Связаться в WhatsApp"
+    },
+    en: {
+      waText: "Contact via WhatsApp"
+    }
+  };
+
+  // Функция переключения языка
+  function switchLanguage(lang) {
+    // Переключаем активную кнопку
+    document.querySelectorAll('.lang-switch button').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Меняем текст в элементах с классом translatable
+    document.querySelectorAll('.translatable').forEach(el => {
+      el.innerHTML = el.dataset[lang];
+    });
+
+    // Меняем текст кнопки WhatsApp
+    document.querySelector('.wa-text').textContent = translations[lang].waText;
+
+    // Меняем lang атрибут html
+    document.documentElement.lang = lang;
+  }
+
+  // Обработчики кликов по кнопкам языка
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchLanguage(btn.dataset.lang);
+    });
+  });
+
+  // Инициализация: по умолчанию русский
+  switchLanguage('ru');
+</script>
+
 </body>
 </html>
