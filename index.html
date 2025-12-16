@@ -8,23 +8,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#f0f0f0;min-height:100vh;display:flex;flex-direction:column;}
-    header{min-height:100vh;background:url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-    header::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.4));}
+    body{font-family:'Inter',sans-serif;background:#f0f8ff;color:#003366;min-height:100vh;display:flex;flex-direction:column;}
+    header{min-height:100vh;background:url('https://thumbs.dreamstime.com/b/sunny-summer-day-lake-mountains-sea-kyrgyzstan-issyk-kul-317616401.jpg') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
+    header::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.3),rgba(0,212,255,0.4));}
     .content{position:relative;z-index:2;padding:0 20px;width:100%}
-    h1{font-size:clamp(2.8rem,9vw,7rem);font-weight:800;letter-spacing:3px;margin-bottom:12px;color:#fff;text-shadow:0 4px 20px rgba(0,212,255,0.5)}
-    .subtitle{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:300;opacity:0.95;margin-bottom:50px;color:#a0f0ff}
+    h1{font-size:clamp(2.8rem,9vw,7rem);font-weight:800;letter-spacing:3px;margin-bottom:12px;color:#ff8c00;text-shadow:0 4px 20px rgba(255,215,0,0.6)}
+    .subtitle{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:300;opacity:0.95;margin-bottom:50px;color:#006666}
     .categories{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));max-width:1400px;margin:0 auto;padding:0 20px 60px}
-    .cat-card{background:rgba(25,35,50,0.92);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,0.25);border-radius:26px;overflow:hidden;text-decoration:none;transition:all .4s ease;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-    .cat-card:hover{transform:translateY(-14px);border-color:#00d4ff;box-shadow:0 20px 40px rgba(0,212,255,0.25)}
+    .cat-card{background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,0.6);border-radius:26px;overflow:hidden;text-decoration:none;transition:all .4s ease;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+    .cat-card:hover{transform:translateY(-14px);border-color:#ff8c00;box-shadow:0 20px 40px rgba(255,140,0,0.3)}
     .cat-card img{width:100%;height:190px;object-fit:cover;transition:transform .5s}
-    .cat-card:hover img{transform:scale(1.1)}
-    .cat-title{padding:22px 16px;text-align:center;font-size:1.4rem;font-weight:700;letter-spacing:1.8px;color:#fff}
-    .cat-card:hover .cat-title{color:#00ffcc;text-shadow:0 0 20px rgba(0,255,204,0.7)}
-    footer{text-align:center;padding:40px 20px 30px;font-size:0.95rem;opacity:0.9;color:#88e0ff;margin-top:auto}
-    .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px;background:rgba(0,0,0,0.6);padding:8px 14px;border-radius:30px;backdrop-filter:blur(12px)}
-    .lang-switch button{background:none;border:none;color:#fff;font-weight:600;font-size:15px;cursor:pointer;padding:6px 14px;border-radius:20px;transition:.3s}
-    .lang-switch button.active{background:#00d4ff;color:#000;font-weight:800}
+    .cat-card:hover img{transform:scale(1.15)}
+    .cat-title{padding:22px 16px;text-align:center;font-size:1.4rem;font-weight:700;letter-spacing:1.8px;color:#006666}
+    .cat-card:hover .cat-title{color:#ff4500;text-shadow:0 0 20px rgba(255,69,0,0.7)}
+    footer{text-align:center;padding:40px 20px 30px;font-size:0.95rem;color:#006666;margin-top:auto;background:#e0ffff}
+    .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px;background:rgba(255,255,255,0.7);padding:8px 14px;border-radius:30px;backdrop-filter:blur(12px)}
+    .lang-switch button{background:none;border:none;color:#003366;font-weight:600;font-size:15px;cursor:pointer;padding:6px 14px;border-radius:20px;transition:.3s}
+    .lang-switch button.active{background:#00d4ff;color:#fff;font-weight:800}
     @media (max-width:768px){
       header{min-height:90vh}
       .categories{grid-template-columns:1fr 1fr;gap:18px;padding:0 16px 50px}
@@ -37,51 +37,46 @@
   </style>
 </head>
 <body>
-
 <div class="lang-switch">
   <button data-lang="ru" class="active">РУ</button>
   <button data-lang="en">EN</button>
 </div>
-
 <header>
   <div class="content">
     <h1 data-key="main-title">ЮЖНЫЙ БЕРЕГ</h1>
     <div class="subtitle" data-key="subtitle">Лучшие отели, юрты, шоу беркутчи и туры на Иссык-Куле</div>
-
     <div class="categories">
       <a href="hotels.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6a?auto=format&fit=crop&w=800&q=80" alt="Hotels">
+        <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/154413592.jpg?k=b3938b088736b99aab4d3f3f502e7c4468217450c023261dfe8fd51b0d27910f&o=" alt="Отели на Иссык-Куле">
         <div class="cat-title" data-key="hotels">ОТЕЛИ</div>
       </a>
       <a href="guest-houses.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Guest houses">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/c9/d6/dd/caption.jpg?w=900&h=-1&s=1" alt="Гостевые дома">
         <div class="cat-title" data-key="guest-houses">ГОСТЕВЫЕ ДОМА</div>
       </a>
       <a href="yurt-camps.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1504280390367-361ea3373a5b?auto=format&fit=crop&w=800&q=80" alt="Yurt camps">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1345295252700769907/original/6836b5bc-059e-42d5-8ee9-451c05c89b42.jpeg" alt="Юрточные лагеря">
         <div class="cat-title" data-key="yurt-camps">ЮРТОЧНЫЕ ЛАГЕРЯ</div>
       </a>
       <a href="berkut.html" class="cat-card">
-        <img src="https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/images/klassika-1.jpg" alt="Eagle hunting">
+        <img src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan-768x513.jpg" alt="Охота с беркутом">
         <div class="cat-title" data-key="berkut">ОХОТА С БЕРКУТОМ</div>
       </a>
       <a href="beautiful-places.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80" alt="Beautiful places">
+        <img src="https://kalpak-travel.com/wp-content/uploads/2021/02/issyk-kul.jpg" alt="Красивые места">
         <div class="cat-title" data-key="places">КРАСИВЫЕ МЕСТА</div>
       </a>
       <a href="tours.html" class="cat-card">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Tours">
+        <img src="https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HBR-1-of-1-e1553921752461.jpg" alt="Туры и приключения">
         <div class="cat-title" data-key="tours">ТУРЫ</div>
       </a>
     </div>
   </div>
 </header>
-
 <footer data-key="footer">
   © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
   +996 709 100 020 · +996 702 703 456
 </footer>
-
 <script type="text/json" id="translations">
 {
   "ru": {
@@ -110,11 +105,9 @@
   }
 }
 </script>
-
 <script>
   const trans = JSON.parse(document.getElementById('translations').textContent);
   const buttons = document.querySelectorAll('.lang-switch button');
-
   function switchLang(lang) {
     document.documentElement.lang = lang;
     document.title = trans[lang].title;
@@ -125,7 +118,6 @@
     buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
     localStorage.setItem('lang', lang);
   }
-
   buttons.forEach(b => b.addEventListener('click', () => switchLang(b.dataset.lang)));
   switchLang(localStorage.getItem('lang') || 'ru');
 </script>
