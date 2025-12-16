@@ -1,204 +1,204 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-&nbsp;&nbsp;<meta charset="UTF-8">
-&nbsp;&nbsp;<meta name="viewport" content="width=device-width, initial-scale=1.0">
-&nbsp;&nbsp;<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-&nbsp;&nbsp;<title data-key="title">Южный Берег Иссык-Куля • 2025</title>
-&nbsp;&nbsp;<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-&nbsp;&nbsp;<style>
-&nbsp;&nbsp;&nbsp;&nbsp;*{margin:0;padding:0;box-sizing:border-box}
-&nbsp;&nbsp;&nbsp;&nbsp;body{font-family:'Inter',sans-serif;background:#f0f8ff;color:#003366;min-height:100vh;display:flex;flex-direction:column;}
-&nbsp;&nbsp;&nbsp;&nbsp;header{min-height:100vh;background:url('https://thumbs.dreamstime.com/b/shore-lake-issyk-kul-kyrgyzstan-beautiful-southern-summer-day-90310873.jpg') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-&nbsp;&nbsp;&nbsp;&nbsp;header::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.3),rgba(0,212,255,0.4));}
-&nbsp;&nbsp;&nbsp;&nbsp;.content{position:relative;z-index:2;padding:0 20px;width:100%}
-&nbsp;&nbsp;&nbsp;&nbsp;h1{font-size:clamp(2.8rem,9vw,7rem);font-weight:800;letter-spacing:3px;margin-bottom:12px;color:#ff8c00;text-shadow:0 4px 20px rgba(255,215,0,0.6)}
-&nbsp;&nbsp;&nbsp;&nbsp;.subtitle{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:300;opacity:0.95;margin-bottom:50px;color:#006666}
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;/* Новый аккуратный grid */
-&nbsp;&nbsp;&nbsp;&nbsp;.categories{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display:grid;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gap:30px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max-width:1400px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:0 auto;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:0 20px 80px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;justify-items:center; /* центрируем карточки по горизонтали */
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;.cat-card{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:100%;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max-width:380px; /* фиксируем максимальную ширину для одинакового размера */
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:rgba(255,255,255,0.85);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backdrop-filter:blur(16px);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border:1px solid rgba(0,212,255,0.6);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius:30px; /* чуть больше скругление для современного вида */
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow:hidden;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-decoration:none;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition:all .4s ease;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:0 10px 30px rgba(0,0,0,0.2);
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.cat-card:hover{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:translateY(-16px);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-color:#ff8c00;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;box-shadow:0 24px 50px rgba(255,140,0,0.35);
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.cat-card img{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:100%;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:220px; /* увеличил высоту фото для лучшей пропорции */
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object-fit:cover;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition:transform .5s;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.cat-card:hover img{transform:scale(1.12)}
-&nbsp;&nbsp;&nbsp;&nbsp;.cat-title{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:24px 16px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align:center;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:1.5rem;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight:700;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;letter-spacing:2px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:#006666;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.cat-card:hover .cat-title{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:#ff4500;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-shadow:0 0 20px rgba(255,69,0,0.7);
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;footer{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align:center;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:40px 20px 30px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:0.95rem;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:#006666;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top:auto;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:#e0ffff;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.lang-switch{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position:fixed;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top:20px;right:20px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z-index:100;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display:flex;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gap:8px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:rgba(255,255,255,0.7);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:8px 14px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius:30px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backdrop-filter:blur(12px);
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.lang-switch button{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:none;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border:none;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:#003366;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight:600;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:15px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor:pointer;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding:6px 14px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius:20px;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition:.3s;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;.lang-switch button.active{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background:#00d4ff;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:#fff;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-weight:800;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;/* Адаптив */
-&nbsp;&nbsp;&nbsp;&nbsp;@media (max-width:1024px){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.categories{grid-template-columns:repeat(auto-fit, minmax(300px,1fr));gap:25px;}
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@media (max-width:768px){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;header{min-height:90vh}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.categories{grid-template-columns:1fr 1fr;gap:20px;padding:0 16px 60px}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cat-card img{height:180px}
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;@media (max-width:480px){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.categories{grid-template-columns:1fr;gap:20px}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cat-card img{height:200px}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cat-card{max-width:340px}
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title data-key="title">Южный Берег Иссык-Куля • 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#f0f8ff;color:#003366;min-height:100vh;display:flex;flex-direction:column;}
+    header{min-height:100vh;background:url('https://thumbs.dreamstime.com/b/shore-lake-issyk-kul-kyrgyzstan-beautiful-southern-summer-day-90310873.jpg') center/cover no-repeat fixed;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
+    header::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.3),rgba(0,212,255,0.4));}
+    .content{position:relative;z-index:2;padding:0 20px;width:100%}
+    h1{font-size:clamp(2.8rem,9vw,7rem);font-weight:800;letter-spacing:3px;margin-bottom:12px;color:#ff8c00;text-shadow:0 4px 20px rgba(255,215,0,0.6)}
+    .subtitle{font-size:clamp(1.1rem,4vw,1.8rem);font-weight:300;opacity:0.95;margin-bottom:50px;color:#006666}
+    
+    /* Новый аккуратный grid */
+    .categories{
+      display:grid;
+      gap:30px;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      max-width:1400px;
+      margin:0 auto;
+      padding:0 20px 80px;
+      justify-items:center; /* центрируем карточки по горизонтали */
+    }
+    
+    .cat-card{
+      width:100%;
+      max-width:380px; /* фиксируем максимальную ширину для одинакового размера */
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(0,212,255,0.6);
+      border-radius:30px; /* чуть больше скругление для современного вида */
+      overflow:hidden;
+      text-decoration:none;
+      transition:all .4s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+    .cat-card:hover{
+      transform:translateY(-16px);
+      border-color:#ff8c00;
+      box-shadow:0 24px 50px rgba(255,140,0,0.35);
+    }
+    .cat-card img{
+      width:100%;
+      height:220px; /* увеличил высоту фото для лучшей пропорции */
+      object-fit:cover;
+      transition:transform .5s;
+    }
+    .cat-card:hover img{transform:scale(1.12)}
+    .cat-title{
+      padding:24px 16px;
+      text-align:center;
+      font-size:1.5rem;
+      font-weight:700;
+      letter-spacing:2px;
+      color:#006666;
+    }
+    .cat-card:hover .cat-title{
+      color:#ff4500;
+      text-shadow:0 0 20px rgba(255,69,0,0.7);
+    }
+    
+    footer{
+      text-align:center;
+      padding:40px 20px 30px;
+      font-size:0.95rem;
+      color:#006666;
+      margin-top:auto;
+      background:#e0ffff;
+    }
+    .lang-switch{
+      position:fixed;
+      top:20px;right:20px;
+      z-index:100;
+      display:flex;
+      gap:8px;
+      background:rgba(255,255,255,0.7);
+      padding:8px 14px;
+      border-radius:30px;
+      backdrop-filter:blur(12px);
+    }
+    .lang-switch button{
+      background:none;
+      border:none;
+      color:#003366;
+      font-weight:600;
+      font-size:15px;
+      cursor:pointer;
+      padding:6px 14px;
+      border-radius:20px;
+      transition:.3s;
+    }
+    .lang-switch button.active{
+      background:#00d4ff;
+      color:#fff;
+      font-weight:800;
+    }
+    
+    /* Адаптив */
+    @media (max-width:1024px){
+      .categories{grid-template-columns:repeat(auto-fit, minmax(300px,1fr));gap:25px;}
+    }
+    @media (max-width:768px){
+      header{min-height:90vh}
+      .categories{grid-template-columns:1fr 1fr;gap:20px;padding:0 16px 60px}
+      .cat-card img{height:180px}
+    }
+    @media (max-width:480px){
+      .categories{grid-template-columns:1fr;gap:20px}
+      .cat-card img{height:200px}
+      .cat-card{max-width:340px}
+    }
+  </style>
 </head>
 <body>
 <div class="lang-switch">
-&nbsp;&nbsp;<button data-lang="ru" class="active">РУ</button>
-&nbsp;&nbsp;<button data-lang="en">EN</button>
+  <button data-lang="ru" class="active">РУ</button>
+  <button data-lang="en">EN</button>
 </div>
 <header>
-&nbsp;&nbsp;<div class="content">
-&nbsp;&nbsp;&nbsp;&nbsp;<h1 data-key="main-title">ЮЖНЫЙ БЕРЕГ</h1>
-&nbsp;&nbsp;&nbsp;&nbsp;<div class="subtitle" data-key="subtitle">Лучшие отели, юрты, шоу беркутчи и туры на Иссык-Куле</div>
-&nbsp;&nbsp;&nbsp;&nbsp;<div class="categories">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="hotels.html" class="cat-card">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/154413592.jpg?k=b3938b088736b99aab4d3f3f502e7c4468217450c023261dfe8fd51b0d27910f&o=" alt="Летний отель на Иссык-Куле">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="cat-title" data-key="hotels">ОТЕЛИ</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="guest-houses.html" class="cat-card">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/495075256.jpg?k=c6472116f1c22a5195073f5f22acffaa9938fe4217a6c6c0e325ac9112be5f00&o=" alt="Уютный гостевой дом в Боконбаево">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="cat-title" data-key="guest-houses">ГОСТЕВЫЕ ДОМА</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="yurt-camps.html" class="cat-card">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://central-asia.guide/wp-content/uploads/2023/01/Issyk-Kul-south-side-Alma-Luu-yurt-camp-1024x682.jpg" alt="Юрточный лагерь на южном берегу">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="cat-title" data-key="yurt-camps">ЮРТОЧНЫЕ ЛАГЕРЯ</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="berkut.html" class="cat-card">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan.jpg" alt="Шоу охоты с беркутом">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="cat-title" data-key="berkut">ОХОТА С БЕРКУТОМ</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="beautiful-places.html" class="cat-card">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://nomads-life.com/wp-content/uploads/2024/02/Skazrf-canyon-in-Kyrgyzstan.jpg" alt="Каньон Сказка – красивые места">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="cat-title" data-key="places">КРАСИВЫЕ МЕСТА</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tours.html" class="cat-card">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.asiaodysseytravel.com/images/asia-tours/central-asia-tours/song-kul-lake-700-8.jpg" alt="Активные туры и конные прогулки">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="cat-title" data-key="tours">ТУРЫ</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-&nbsp;&nbsp;&nbsp;&nbsp;</div>
-&nbsp;&nbsp;</div>
+  <div class="content">
+    <h1 data-key="main-title">ЮЖНЫЙ БЕРЕГ</h1>
+    <div class="subtitle" data-key="subtitle">Лучшие отели, юрты, шоу беркутчи и туры на Иссык-Куле</div>
+    <div class="categories">
+      <a href="hotels.html" class="cat-card">
+        <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/154413592.jpg?k=b3938b088736b99aab4d3f3f502e7c4468217450c023261dfe8fd51b0d27910f&o=" alt="Летний отель на Иссык-Куле">
+        <div class="cat-title" data-key="hotels">ОТЕЛИ</div>
+      </a>
+      <a href="guest-houses.html" class="cat-card">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/495075256.jpg?k=c6472116f1c22a5195073f5f22acffaa9938fe4217a6c6c0e325ac9112be5f00&o=" alt="Уютный гостевой дом в Боконбаево">
+        <div class="cat-title" data-key="guest-houses">ГОСТЕВЫЕ ДОМА</div>
+      </a>
+      <a href="yurt-camps.html" class="cat-card">
+        <img src="https://central-asia.guide/wp-content/uploads/2023/01/Issyk-Kul-south-side-Alma-Luu-yurt-camp-1024x682.jpg" alt="Юрточный лагерь на южном берегу">
+        <div class="cat-title" data-key="yurt-camps">ЮРТОЧНЫЕ ЛАГЕРЯ</div>
+      </a>
+      <a href="berkut.html" class="cat-card">
+        <img src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan.jpg" alt="Шоу охоты с беркутом">
+        <div class="cat-title" data-key="berkut">ОХОТА С БЕРКУТОМ</div>
+      </a>
+      <a href="beautiful-places.html" class="cat-card">
+        <img src="https://nomads-life.com/wp-content/uploads/2024/02/Skazrf-canyon-in-Kyrgyzstan.jpg" alt="Каньон Сказка – красивые места">
+        <div class="cat-title" data-key="places">КРАСИВЫЕ МЕСТА</div>
+      </a>
+      <a href="tours.html" class="cat-card">
+        <img src="https://www.asiaodysseytravel.com/images/asia-tours/central-asia-tours/song-kul-lake-700-8.jpg" alt="Активные туры и конные прогулки">
+        <div class="cat-title" data-key="tours">ТУРЫ</div>
+      </a>
+    </div>
+  </div>
 </header>
 <footer data-key="footer">
-&nbsp;&nbsp;© 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
-&nbsp;&nbsp;+996 709 100 020 · +996 702 703 456
+  © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
+  +996 709 100 020 · +996 702 703 456
 </footer>
 <script type="text/json" id="translations">
 {
-&nbsp;&nbsp;"ru": {
-&nbsp;&nbsp;&nbsp;&nbsp;"title": "Южный Берег Иссык-Куля • 2025",
-&nbsp;&nbsp;&nbsp;&nbsp;"main-title": "ЮЖНЫЙ БЕРЕГ",
-&nbsp;&nbsp;&nbsp;&nbsp;"subtitle": "Лучшие отели, юрты, шоу беркутчи и туры на Иссык-Куле",
-&nbsp;&nbsp;&nbsp;&nbsp;"hotels": "ОТЕЛИ",
-&nbsp;&nbsp;&nbsp;&nbsp;"guest-houses": "ГОСТЕВЫЕ ДОМА",
-&nbsp;&nbsp;&nbsp;&nbsp;"yurt-camps": "ЮРТОЧНЫЕ ЛАГЕРЯ",
-&nbsp;&nbsp;&nbsp;&nbsp;"berkut": "ОХОТА С БЕРКУТОМ",
-&nbsp;&nbsp;&nbsp;&nbsp;"places": "КРАСИВЫЕ МЕСТА",
-&nbsp;&nbsp;&nbsp;&nbsp;"tours": "ТУРЫ",
-&nbsp;&nbsp;&nbsp;&nbsp;"footer": "© 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>+996 709 100 020 · +996 702 703 456"
-&nbsp;&nbsp;},
-&nbsp;&nbsp;"en": {
-&nbsp;&nbsp;&nbsp;&nbsp;"title": "Southern Shore of Issyk-Kul • 2025",
-&nbsp;&nbsp;&nbsp;&nbsp;"main-title": "SOUTHERN SHORE",
-&nbsp;&nbsp;&nbsp;&nbsp;"subtitle": "Best hotels, yurts, eagle hunting shows and tours around Issyk-Kul",
-&nbsp;&nbsp;&nbsp;&nbsp;"hotels": "HOTELS",
-&nbsp;&nbsp;&nbsp;&nbsp;"guest-houses": "GUEST HOUSES",
-&nbsp;&nbsp;&nbsp;&nbsp;"yurt-camps": "YURT CAMPS",
-&nbsp;&nbsp;&nbsp;&nbsp;"berkut": "EAGLE HUNTING",
-&nbsp;&nbsp;&nbsp;&nbsp;"places": "BEAUTIFUL PLACES",
-&nbsp;&nbsp;&nbsp;&nbsp;"tours": "TOURS",
-&nbsp;&nbsp;&nbsp;&nbsp;"footer": "© 2025 Southern Shore of Issyk-Kul · Bokonbaevo and surroundings<br>+996 709 100 020 · +996 702 703 456"
-&nbsp;&nbsp;}
+  "ru": {
+    "title": "Южный Берег Иссык-Куля • 2025",
+    "main-title": "ЮЖНЫЙ БЕРЕГ",
+    "subtitle": "Лучшие отели, юрты, шоу беркутчи и туры на Иссык-Куле",
+    "hotels": "ОТЕЛИ",
+    "guest-houses": "ГОСТЕВЫЕ ДОМА",
+    "yurt-camps": "ЮРТОЧНЫЕ ЛАГЕРЯ",
+    "berkut": "ОХОТА С БЕРКУТОМ",
+    "places": "КРАСИВЫЕ МЕСТА",
+    "tours": "ТУРЫ",
+    "footer": "© 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>+996 709 100 020 · +996 702 703 456"
+  },
+  "en": {
+    "title": "Southern Shore of Issyk-Kul • 2025",
+    "main-title": "SOUTHERN SHORE",
+    "subtitle": "Best hotels, yurts, eagle hunting shows and tours around Issyk-Kul",
+    "hotels": "HOTELS",
+    "guest-houses": "GUEST HOUSES",
+    "yurt-camps": "YURT CAMPS",
+    "berkut": "EAGLE HUNTING",
+    "places": "BEAUTIFUL PLACES",
+    "tours": "TOURS",
+    "footer": "© 2025 Southern Shore of Issyk-Kul · Bokonbaevo and surroundings<br>+996 709 100 020 · +996 702 703 456"
+  }
 }
 </script>
 <script>
-&nbsp;&nbsp;const trans = JSON.parse(document.getElementById('translations').textContent);
-&nbsp;&nbsp;const buttons = document.querySelectorAll('.lang-switch button');
-&nbsp;&nbsp;function switchLang(lang) {
-&nbsp;&nbsp;&nbsp;&nbsp;document.documentElement.lang = lang;
-&nbsp;&nbsp;&nbsp;&nbsp;document.title = trans[lang].title;
-&nbsp;&nbsp;&nbsp;&nbsp;document.querySelectorAll('[data-key]').forEach(el => {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const key = el.dataset.key;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (trans[lang][key]) el.innerHTML = trans[lang][key];
-&nbsp;&nbsp;&nbsp;&nbsp;});
-&nbsp;&nbsp;&nbsp;&nbsp;buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-&nbsp;&nbsp;&nbsp;&nbsp;localStorage.setItem('lang', lang);
-&nbsp;&nbsp;}
-&nbsp;&nbsp;buttons.forEach(b => b.addEventListener('click', () => switchLang(b.dataset.lang)));
-&nbsp;&nbsp;switchLang(localStorage.getItem('lang') || 'ru');
+  const trans = JSON.parse(document.getElementById('translations').textContent);
+  const buttons = document.querySelectorAll('.lang-switch button');
+  function switchLang(lang) {
+    document.documentElement.lang = lang;
+    document.title = trans[lang].title;
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.dataset.key;
+      if (trans[lang][key]) el.innerHTML = trans[lang][key];
+    });
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    localStorage.setItem('lang', lang);
+  }
+  buttons.forEach(b => b.addEventListener('click', () => switchLang(b.dataset.lang)));
+  switchLang(localStorage.getItem('lang') || 'ru');
 </script>
 </body>
 </html>
