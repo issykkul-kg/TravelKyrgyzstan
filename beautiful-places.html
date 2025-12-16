@@ -1,228 +1,211 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Топ-10 красивых мест южного берега Иссык-Куля 2025</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Красивые места • Южный Берег Иссык-Куля • 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #f0f0f0;
-      background: linear-gradient(to bottom, #0a0a0a, #001020);
-      min-height: 100vh;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f0f8ff;
+      color:#003366;
+      min-height:100vh;
+      padding-top:80px;
     }
-    /* Кнопка «На главную» */
-    .back-home {
-      position: fixed;
-      top: 20px; left: 20px;
-      background: rgba(0,212,255,0.2);
-      backdrop-filter: blur(12px);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(0,212,255,0.5);
-      z-index: 1000;
-      transition: all 0.3s;
+    body::before{
+      content:""; position:fixed; inset:0;
+      background:linear-gradient(to bottom,rgba(240,248,255,0.9),rgba(224,255,255,0.8)),
+      url('https://c8.alamy.com/comp/PT3PMT/beautiful-southern-shore-of-lake-issyk-kul-in-the-summer-day-kyrgyzstan-PT3PMT.jpg') center/cover no-repeat;
+      z-index:-1;
     }
-    .back-home:hover {
-      background: rgba(0,212,255,0.4);
-      transform: translateX(-5px);
-      box-shadow: 0 8px 30px rgba(0,212,255,0.4);
+    .back-btn{
+      position:fixed;
+      top:20px;
+      left:20px;
+      z-index:999;
+      background:#00d4ff;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:50px;
+      font-weight:600;
+      font-size:1rem;
+      text-decoration:none;
+      box-shadow:0 4px 15px rgba(0,212,255,0.4);
+      transition:all .3s;
     }
-
-    /* Шапка с твоей фоткой */
-    header {
-      height: 100vh;
-      background: url('https://cdn.jsdelivr.net/gh/issykkul-kg/TravelKyrgyzstan@main/issyk-kul.jpg') center/cover no-repeat fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
+    .back-btn:hover{
+      background:#ff8c00;
+      transform:scale(1.05);
+      box-shadow:0 8px 25px rgba(255,140,0,0.4);
     }
-    header::before {
-      content:""; position:absolute; inset:0;
-      background: rgba(0,0,0,0.58);
+    .back-btn::before{content:"← ";font-size:1.3em}
+    header{
+      text-align:center;
+      padding:60px 20px 40px;
     }
-    .header-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 20px;
+    h1{
+      font-size:clamp(3rem,10vw,6rem);
+      color:#ff8c00;
+      text-shadow:0 4px 20px rgba(255,215,0,0.6);
+      margin-bottom:20px;
     }
-    h1 {
-      font-size: clamp(3rem, 10vw, 6.5rem);
-      font-weight: 900;
-      letter-spacing: 6px;
-      color: #ffffff;
-      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
-      margin-bottom: 20px;
+    .container{
+      max-width:1400px;
+      margin:0 auto;
+      padding:40px 20px 80px;
     }
-
-    /* Основной контент */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 120px 20px 100px;
+    h2{
+      text-align:center;
+      color:#006666;
+      font-size:3rem;
+      margin-bottom:60px;
     }
-    h2 {
-      text-align: center;
-      color: #00e5e5;
-      font-size: 3.4rem;
-      margin-bottom: 70px;
-      letter-spacing: 4px;
-      font-weight: 900;
-      text-shadow: 0 4px 20px rgba(0, 229, 229, 0.4);
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:40px;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 40px;
+    .place-card{
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(0,212,255,0.6);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 15px 40px rgba(0,0,0,0.2);
+      transition:.4s;
     }
-    .hotel-card {
-      background: rgba(25,35,50,0.94);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(0,212,255,0.3);
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.5s ease;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    .place-card:hover{transform:translateY(-12px)}
+    .place-card img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      transition:transform .6s;
     }
-    .hotel-card:hover {
-      transform: translateY(-20px);
-      border-color: #00ffff;
-      box-shadow: 0 30px 70px rgba(0,212,255,0.45);
+    .place-card:hover img{transform:scale(1.1)}
+    .info{
+      padding:28px;
+      text-align:center;
     }
-    .hotel-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      transition: transform 0.6s ease;
+    .info h3{
+      font-size:1.55rem;
+      color:#006666;
+      margin-bottom:12px;
     }
-    .hotel-card:hover img {
-      transform: scale(1.1);
+    .info p{
+      font-size:1.1rem;
+      line-height:1.6;
+      margin-bottom:16px;
+      color:#003366;
     }
-    .info {
-      padding: 28px;
+    footer{
+      text-align:center;
+      padding:60px 20px;
+      background:#e0ffff;
+      color:#006666;
+      font-size:0.95rem;
     }
-    .info h3 {
-      font-size: 1.55rem;
-      margin-bottom: 12px;
-      color: #00ffcc;
-      font-weight: 700;
-    }
-    .info p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      opacity: 0.92;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      opacity: 0.8;
-      color: #88e0ff;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .grid { grid-template-columns: 1fr; }
-      h2 { font-size: 2.8rem; }
+    @media(max-width:768px){
+      .grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
+<a href="index.html" class="back-btn">На главную</a>
 
-  <a href="index.html" class="back-home">
-    ← На главную
-  </a>
+<header>
+  <h1>КРАСИВЫЕ МЕСТА</h1>
+</header>
 
-  <header>
-    <div class="header-content">
-      <h1>КРАСИВЫЕ МЕСТА</h1>
+<div class="container">
+  <h2>Топ-10 красивых мест южного берега 2025</h2>
+  <div class="grid">
+    <div class="place-card">
+      <img src="https://www.alamy.com/stock-photo-jeti-oguz-rocks-near-karakol-issyk-kul-oblast-kyrgyzstan-63235173.html?imageid=DJTH31" alt="Джеты-Огуз">
+      <div class="info">
+        <h3>1. Джеты-Огуз — «Семь быков» и «Разбитое сердце»</h3>
+        <p>Красные скалы, горячие источники, водопады и цветущие луга</p>
+      </div>
     </div>
-  </header>
 
-  <div class="container">
-    <h2>ТОП-10 КРАСИВЫХ МЕСТ ЮЖНОГО БЕРЕГА 2025</h2>
-
-    <div class="grid">
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1627741797892-9f43e3831337?w=1200&auto=format&fit=crop&q=80" alt="Джеты-Огуз">
-        <div class="info">
-          <h3>Джеты-Огуз — «Семь быков» и «Разбитое сердце»</h3>
-          <p>Красные скалы, горный воздух, 30 минут от берега</p>
-        </div>
+    <div class="place-card">
+      <img src="https://www.alamy.com/panorama-of-skazka-aka-fairytale-canyon-issyk-kul-kyrgyzstan-image182896543.html?imageid=MHFJBB" alt="Каньон Сказка">
+      <div class="info">
+        <h3>2. Каньон «Сказка»</h3>
+        <p>Марсианские пейзажи, разноцветные скалы недалеко от Тосора</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1599641952234-0ec15f5c7455?w=1200&auto=format&fit=crop&q=80" alt="Каньон Сказка">
-        <div class="info">
-          <h3>Каньон «Сказка»</h3>
-          <p>Марсианские пейзажи, разноцветные горы, 20 минут от Тосора</p>
-        </div>
+    <div class="place-card">
+      <img src="https://www.gettyimages.com/detail/photo/barskon-or-barskoon-waterfall-mountain-landscape-royalty-free-image/1297864648" alt="Водопады Барскоон">
+      <div class="info">
+        <h3>3. Водопады Барскоон</h3>
+        <p>Мощные каскады «Слезы барса» и «Чаша Манаса» в еловом лесу</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1632324702665-78d12f9c7d65?w=1200&auto=format&fit=crop&q=80" alt="Барскоонский водопад">
-        <div class="info">
-          <h3>Водопады Барскоон</h3>
-          <p>«Слезы барса», «Чаша Манаса» — мощные потоки с высоты 100 м</p>
-        </div>
+    <div class="place-card">
+      <img src="https://central-asia.guide/wp-content/uploads/2020/07/Dead-Lake-Tuz-Kol-Issyk-Kul.jpg" alt="Солёное озеро">
+      <div class="info">
+        <h3>4. Мёртвое (солёное) озеро Туз-Кёль</h3>
+        <p>Лечебная грязь, плавание как в Мёртвом море</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1617113928183-3e3573e3e4a6?w=1200&auto=format&fit=crop&q=80" alt="Солёное озеро">
-        <div class="info">
-          <h3>Мёртвое (солёное) озеро</h3>
-          <p>Лечебная грязь, можно лежать на воде, как в Мёртвом море</p>
-        </div>
+    <div class="place-card">
+      <img src="https://global-geography.org/af/Geography/Asia/Kyrgyzstan/Pictures/Issyk-Kul/Boom_Gorge/_u/1_Boom_Gorge_Issyk-Kul_Kyrgyzstan.jpg" alt="Боомское ущелье">
+      <div class="info">
+        <h3>5. Боомское ущелье</h3>
+        <p>Эпичные виды на озеро сверху, лучший закат</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1604426604029-0cf2c5c087c8?w=1200&auto=format&fit=crop&q=80" alt="Боомское ущелье">
-        <div class="info">
-          <h3>Боомское ущелье (перевал Кок-Айрык)</h3>
-          <p>Эпичные виды на озеро сверху, лучший закат</p>
-        </div>
+    <div class="place-card">
+      <img src="https://www.wandersmiles.com/wp-content/uploads/2021/03/Eagle-Hunter-in-Kyrgyzstan.jpg" alt="Охота с беркутом">
+      <div class="info">
+        <h3>6. Шоу охоты с беркутом в Боконбаево</h3>
+        <p>Традиционное кыргызское шоу, фото с орлом</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1623332650234-90e2e3e1e76c?w=1200&auto=format&fit=crop&q=80" alt="Охота с беркутом">
-        <div class="info">
-          <h3>Охота с беркутом в Боконбаево</h3>
-          <p>Традиционное кыргызское шоу, фото с орлом на руке</p>
-        </div>
+    <div class="place-card">
+      <img src="https://www.alamy.com/lake-beach-at-tosor-issyk-kul-issyk-kul-region-kyrgyzstan-central-asia-image485830319.html?imageid=2K6BDER" alt="Пляж Тосор">
+      <div class="info">
+        <h3>7. Золотой пляж Тосор</h3>
+        <p>Длинный песчаный пляж с чистой водой и горами</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1592419816299-1c3c8f2a6c9e?w=1200&auto=format&fit=crop&q=80" alt="Пляж Тосор">
-        <div class="info">
-          <h3>Золотой пляж Тосор</h3>
-          <p>Самый длинный песчаный пляж южного берега</p>
-        </div>
+    <div class="place-card">
+      <img src="https://central-asia.guide/wp-content/uploads/2023/07/Tosor-Pass-Kyrgyzstan.jpg" alt="Перевал Тосор">
+      <div class="info">
+        <h3>8. Перевал Тосор (3893 м)</h3>
+        <p>Трекинг с панорамным видом на всё озеро</p>
       </div>
+    </div>
 
-      <div class="hotel-card">
-        <img src="https://images.unsplash.com/photo-1632465533388-545e2c8c984d?w=1200&auto=format&fit=crop&q=80" alt="Перевал Тосор">
-        <div class="info">
-          <h3>Перевал Тосор (3893 м)</h3>
-          <p>Однодневный трекинг с видом на всё озеро</p>
-        </div>
+    <div class="place-card">
+      <img src="https://www.alamy.com/stock-photo-jeti-oguz-gorge-issyk-kul-kyrgyzstan-147857258.html" alt="Ущелье Джеты-Огуз">
+      <div class="info">
+        <h3>9. Ущелье Джеты-Огуз</h3>
+        <p>Зелёная долина, водопады и юртовые лагеря</p>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/69/46/bel-tam-seaside-yurt.jpg?w=900&h=500&s=1" alt="Юрточные лагеря на берегу">
+      <div class="info">
+        <h3>10. Юрточные лагеря на южном берегу</h3>
+        <p>Аутентичный отдых с видом на озеро и горы</p>
       </div>
     </div>
   </div>
+</div>
 
-  <footer>
-    © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности
-  </footer>
+<footer>
+  © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
+  +996 709 100 020 · +996 702 703 456
+</footer>
 </body>
 </html>
