@@ -5,30 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лучшие отели • Южный Берег Иссык-Куля • 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:'Inter',sans-serif;
-      background:#f0f8ff;
-      color:#003366;
-      min-height:100vh;
-      padding-top:80px;
-    }
-    body::before{
-      content:""; position:fixed; inset:0;
-      background:linear-gradient(to bottom,rgba(240,248,255,0.9),rgba(224,255,255,0.8)),
-      url('https://c8.alamy.com/comp/PT3PMT/beautiful-southern-shore-of-lake-issyk-kul-in-the-summer-day-kyrgyzstan-PT3PMT.jpg') center/cover no-repeat;
-      z-index:-1;
-    }
-    .back-btn{
-      position:fixed;
-      top:20px;left:20px;z-index:999;
-      background:#00d4ff;color:#fff;padding:12px 24px;border-radius:50px;
-      font-weight:600;font-size:1rem;text-decoration:none;
-      box-shadow:0 4px 15px rgba(0,212,255,0.4);transition:all .3s;
-    }
+    body{font-family:'Inter',sans-serif;background:#f0f8ff;color:#003366;min-height:100vh;padding-top:80px;}
+    body::before{content:"";position:fixed;inset:0;background:linear-gradient(to bottom,rgba(240,248,255,0.9),rgba(224,255,255,0.8)),url('https://c8.alamy.com/comp/PT3PMT/beautiful-southern-shore-of-lake-issyk-kul-in-the-summer-day-kyrgyzstan-PT3PMT.jpg') center/cover no-repeat;z-index:-1;}
+    .back-btn{position:fixed;top:20px;left:20px;z-index:999;background:#00d4ff;color:#fff;padding:12px 24px;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;box-shadow:0 4px 15px rgba(0,212,255,0.4);transition:all .3s;}
     .back-btn:hover{background:#ff8c00;transform:scale(1.05);box-shadow:0 8px 25px rgba(255,140,0,0.4);}
     .back-btn::before{content:"← ";font-size:1.3em}
     header{text-align:center;padding:60px 20px 40px;}
@@ -36,53 +18,30 @@
     .container{max-width:1400px;margin:0 auto;padding:40px 20px 80px;}
     h2{text-align:center;color:#006666;font-size:3rem;margin-bottom:60px;}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px;}
-    .hotel-card{
-      background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);
-      border:1px solid rgba(0,212,255,0.6);border-radius:28px;overflow:hidden;
-      box-shadow:0 15px 40px rgba(0,0,0,0.2);transition:.4s;cursor:pointer;
-    }
+    .hotel-card{background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border:1px solid rgba(0,212,255,0.6);border-radius:28px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.2);transition:.4s;cursor:pointer;}
     .hotel-card:hover{transform:translateY(-12px)}
     .hotel-card img{width:100%;height:260px;object-fit:cover;transition:transform .6s;}
     .hotel-card:hover img{transform:scale(1.1)}
     .info{padding:28px;text-align:center;}
     .info h3{font-size:1.55rem;color:#006666;margin-bottom:12px;}
     .info p{font-size:1.1rem;line-height:1.6;margin-bottom:16px;color:#003366;}
-    .price{display:inline-block;background:#ff8c00;color:#fff;font-weight:900;
-      padding:8px 20px;border-radius:30px;font-size:1.1rem;margin-bottom:20px;}
-    .btn{display:inline-block;background:linear-gradient(135deg,#00d4ff,#22d3ee);color:#fff;
-      font-weight:700;padding:14px 32px;border-radius:50px;text-decoration:none;
-      font-size:1.1rem;box-shadow:0 8px 25px rgba(0,212,255,0.4);transition:.3s;}
+    .price{display:inline-block;background:#ff8c00;color:#fff;font-weight:900;padding:8px 20px;border-radius:30px;font-size:1.1rem;margin-bottom:20px;}
+    .btn{display:inline-block;background:linear-gradient(135deg,#00d4ff,#22d3ee);color:#fff;font-weight:700;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:1.1rem;box-shadow:0 8px 25px rgba(0,212,255,0.4);transition:.3s;}
     .btn:hover{background:#ff8c00;transform:scale(1.08)}
-
-    /* Модальное окно */
-    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;
-      align-items:center;justify-content:center;padding:20px;overflow-y:auto;}
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;align-items:center;justify-content:center;padding:20px;overflow-y:auto;}
     .modal.active{display:flex;}
-    .modal-content{
-      background:#fff;border-radius:28px;max-width:1100px;width:100%;max-height:90vh;
-      overflow:hidden;display:flex;flex-direction:column;
-    }
-    .modal-header{
-      padding:30px;text-align:center;background:#006666;color:#fff;
-    }
+    .modal-content{background:#fff;border-radius:28px;max-width:1100px;width:100%;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;}
+    .modal-header{padding:30px;text-align:center;background:#006666;color:#fff;}
     .modal-header h3{font-size:2.2rem;margin-bottom:10px;}
     .modal-body{flex-grow:1;display:flex;flex-direction:column;}
-    .modal-swiper{height:500px;background:#000;}
-    .modal-swiper .swiper-slide img{width:100%;height:100%;object-fit:contain;background:#000;}
+    .modal-swiper{height:500px;background:#f0f8ff;}
+    .modal-swiper .swiper-slide img{width:100%;height:100%;object-fit:contain;background:#fff;}
     .modal-info{padding:30px;text-align:center;background:rgba(255,255,255,0.95);}
     .modal-info p{font-size:1.2rem;line-height:1.7;margin-bottom:20px;}
-    .close-modal{
-      position:absolute;top:20px;right:30px;font-size:2.5rem;color:#fff;cursor:pointer;
-      width:50px;height:50px;background:rgba(255,255,255,0.2);border-radius:50%;
-      display:flex;align-items:center;justify-content:center;transition:.3s;
-    }
+    .close-modal{position:absolute;top:20px;right:30px;font-size:2.5rem;color:#fff;cursor:pointer;width:50px;height:50px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s;}
     .close-modal:hover{background:rgba(255,140,0,0.8);}
     footer{text-align:center;padding:60px 20px;background:#e0ffff;color:#006666;font-size:0.95rem;}
-    @media(max-width:768px){
-      .grid{grid-template-columns:1fr}
-      .modal-swiper{height:300px;}
-      .modal-header h3{font-size:1.8rem;}
-    }
+    @media(max-width:768px){.grid{grid-template-columns:1fr}.modal-swiper{height:300px;}.modal-header h3{font-size:1.8rem;}}
   </style>
 </head>
 <body>
@@ -96,7 +55,7 @@
 
     <!-- Карточка Ton Marina -->
     <div class="hotel-card" onclick="openModal()">
-      <img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina Apart-Hotel" loading="lazy">
+      <img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina Apart-Hotel" loading="lazy">
       <div class="info">
         <h3>Ton Marina Apart-Hotel</h3>
         <p>Село Тон • Современные апартаменты с кухней<br>Собственный пирс • Прямой вид на озеро</p>
@@ -105,9 +64,9 @@
       </div>
     </div>
 
-    <!-- Другие отели -->
+    <!-- Другие отели (пример) -->
     <div class="hotel-card">
-      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/21/3c/bel-tam-seaside-yurt.jpg?w=700&h=-1&s=1" alt="Bel Tam Seaside Yurt Camp">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/21/3c/bel-tam-seaside-yurt.jpg?w=700&h=-1&s=1" alt="Bel Tam">
       <div class="info">
         <h3>Bel Tam Seaside Yurt Camp</h3>
         <p>Юрточный лагерь • Прямо на пляже • Аутентично • Закаты</p>
@@ -119,7 +78,7 @@
   </div>
 </div>
 
-<!-- МОДАЛЬНОЕ ОКНО с 28 фото -->
+<!-- Модальное окно Ton Marina -->
 <div class="modal" id="tonMarinaModal">
   <div class="close-modal" onclick="closeModal()">×</div>
   <div class="modal-content">
@@ -130,34 +89,34 @@
     <div class="modal-body">
       <div class="swiper modal-swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-1.jpg" alt="1" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-2.jpg" alt="2" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-3.jpg" alt="3" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-4.jpg" alt="4" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-5.jpg" alt="5" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-6.jpg" alt="6" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-7.jpg" alt="7" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-8.jpg" alt="8" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-9.jpg" alt="9" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-10.jpg" alt="10" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-11.jpg" alt="11" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-12.jpg" alt="12" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-13.jpg" alt="13" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-14.jpg" alt="14" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-15.jpg" alt="15" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-16.jpg" alt="16" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-17.jpg" alt="17" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-18.jpg" alt="18" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-19.jpg" alt="19" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-20.jpg" alt="20" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-21.jpg" alt="21" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-22.jpg" alt="22" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-23.jpg" alt="23" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-24.jpg" alt="24" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-25.jpg" alt="25" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-26.jpg" alt="26" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-27.jpg" alt="27" loading="lazy"></div>
-          <div class="swiper-slide"><img src="https://raw.githubusercontent.com/issykkul-kg/TravelKyrgyzstan/main/images/ton-marina/Ton-Marina-28.jpg" alt="28" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-1.jpg" alt="1" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-2.jpg" alt="2" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-3.jpg" alt="3" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-4.jpg" alt="4" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-5.jpg" alt="5" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-6.jpg" alt="6" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-7.jpg" alt="7" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-8.jpg" alt="8" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-9.jpg" alt="9" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-10.jpg" alt="10" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-11.jpg" alt="11" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-12.jpg" alt="12" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-13.jpg" alt="13" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-14.jpg" alt="14" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-15.jpg" alt="15" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-16.jpg" alt="16" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-17.jpg" alt="17" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-18.jpg" alt="18" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-19.jpg" alt="19" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-20.jpg" alt="20" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-21.jpg" alt="21" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-22.jpg" alt="22" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-23.jpg" alt="23" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-24.jpg" alt="24" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-25.jpg" alt="25" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-26.jpg" alt="26" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-27.jpg" alt="27" loading="lazy"></div>
+          <div class="swiper-slide"><img src="/TravelKyrgyzstan/images/ton-marina/Ton-Marina-28.jpg" alt="28" loading="lazy"></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -178,7 +137,6 @@
   +996 709 100 020 · +996 702 703 456
 </footer>
 
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   let modalSwiper;
