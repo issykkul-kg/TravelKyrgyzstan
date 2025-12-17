@@ -1,79 +1,204 @@
-<div class="grid">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лучшие отели • Южный Берег Иссык-Куля • 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f0f8ff;
+      color:#003366;
+      min-height:100vh;
+      padding-top:80px;
+    }
+    body::before{
+      content:""; position:fixed; inset:0;
+      background:linear-gradient(to bottom,rgba(240,248,255,0.9),rgba(224,255,255,0.8)),
+      url('https://c8.alamy.com/comp/PT3PMT/beautiful-southern-shore-of-lake-issyk-kul-in-the-summer-day-kyrgyzstan-PT3PMT.jpg') center/cover no-repeat;
+      z-index:-1;
+    }
+    .back-btn{
+      position:fixed;
+      top:20px;left:20px;z-index:999;
+      background:#00d4ff;color:#fff;padding:12px 24px;border-radius:50px;
+      font-weight:600;font-size:1rem;text-decoration:none;
+      box-shadow:0 4px 15px rgba(0,212,255,0.4);transition:all .3s;
+    }
+    .back-btn:hover{background:#ff8c00;transform:scale(1.05);box-shadow:0 8px 25px rgba(255,140,0,0.4);}
+    .back-btn::before{content:"← ";font-size:1.3em}
+    header{text-align:center;padding:60px 20px 40px;}
+    h1{font-size:clamp(3rem,10vw,6rem);color:#ff8c00;text-shadow:0 4px 20px rgba(255,215,0,0.6);margin-bottom:20px;}
+    .container{max-width:1400px;margin:0 auto;padding:40px 20px 80px;}
+    h2{text-align:center;color:#006666;font-size:3rem;margin-bottom:60px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px;}
+    .hotel-card{
+      background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);
+      border:1px solid rgba(0,212,255,0.6);border-radius:28px;overflow:hidden;
+      box-shadow:0 15px 40px rgba(0,0,0,0.2);transition:.4s;cursor:pointer;
+    }
+    .hotel-card:hover{transform:translateY(-12px)}
+    .hotel-card img{width:100%;height:260px;object-fit:cover;transition:transform .6s;}
+    .hotel-card:hover img{transform:scale(1.1)}
+    .info{padding:28px;text-align:center;}
+    .info h3{font-size:1.55rem;color:#006666;margin-bottom:12px;}
+    .info p{font-size:1.1rem;line-height:1.6;margin-bottom:16px;color:#003366;}
+    .price{display:inline-block;background:#ff8c00;color:#fff;font-weight:900;
+      padding:8px 20px;border-radius:30px;font-size:1.1rem;margin-bottom:20px;}
+    .btn{display:inline-block;background:linear-gradient(135deg,#00d4ff,#22d3ee);color:#fff;
+      font-weight:700;padding:14px 32px;border-radius:50px;text-decoration:none;
+      font-size:1.1rem;box-shadow:0 8px 25px rgba(0,212,255,0.4);transition:.3s;}
+    .btn:hover{background:#ff8c00;transform:scale(1.08)}
+    footer{text-align:center;padding:60px 20px;background:#e0ffff;color:#006666;font-size:0.95rem;}
 
-  <!-- 1. Ton Marina — красивая карточка со слайдером 28 фото (уже была) -->
-  <div class="hotel-card">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina 1" loading="lazy"></div>
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="Ton Marina 2" loading="lazy"></div>
-        <!-- … остальные 26 фото остаются без изменений … -->
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-28.jpg" alt="Ton Marina 28" loading="lazy"></div>
+    /* Модальное окно */
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;
+      align-items:center;justify-content:center;padding:20px;overflow-y:auto;}
+    .modal.active{display:flex;}
+    .modal-content{
+      background:#fff;border-radius:28px;max-width:1100px;width:100%;max-height:90vh;
+      overflow:hidden;display:flex;flex-direction:column;
+    }
+    .modal-header{
+      padding:30px;text-align:center;background:#006666;color:#fff;
+    }
+    .modal-header h3{font-size:2.2rem;margin-bottom:10px;}
+    .modal-body{
+      flex-grow:1;display:flex;flex-direction:column;
+    }
+    .modal-swiper{height:500px;}
+    .modal-swiper .swiper-slide img{width:100%;height:100%;object-fit:cover;}
+    .modal-info{padding:30px;text-align:center;background:rgba(255,255,255,0.95);}
+    .modal-info p{font-size:1.2rem;line-height:1.7;margin-bottom:20px;}
+    .close-modal{
+      position:absolute;top:20px;right:30px;font-size:2.5rem;color:#fff;cursor:pointer;
+      width:50px;height:50px;background:rgba(255,255,255,0.2);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;transition:.3s;
+    }
+    .close-modal:hover{background:rgba(255,140,0,0.8);}
+    @media(max-width:768px){
+      .grid{grid-template-columns:1fr}
+      .modal-swiper{height:300px;}
+      .modal-header h3{font-size:1.8rem;}
+      .modal-content{max-height:95vh;}
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-btn">На главную</a>
+<header>
+  <h1>ОТЕЛИ</h1>
+</header>
+<div class="container">
+  <h2>Лучшие отели и апартаменты южного берега 2025</h2>
+  <div class="grid">
+
+    <!-- Компактная карточка Ton Marina (клик открывает модалку) -->
+    <div class="hotel-card" onclick="openModal()">
+      <img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina Apart-Hotel" loading="lazy">
+      <div class="info">
+        <h3>Ton Marina Apart-Hotel</h3>
+        <p>Село Тон • Современные апартаменты с кухней<br>Собственный пирс • Прямой вид на озеро</p>
+        <div class="price">от 8000 до 20000 сом / ночь</div>
+        <a href="https://wa.me/996709100020?text=Здравствуйте! Хочу забронировать Ton Marina" class="btn" onclick="event.stopPropagation();">Забронировать в WhatsApp</a>
       </div>
-      <div class="swiper-pagination"></div>
     </div>
-    <div class="info">
-      <h3>Ton Marina Apart-Hotel</h3>
-      <p>Село Тон • Современные апартаменты с кухней и балконами<br>Собственный пирс и пляж • Прямой вид на Иссык-Куль • Wi-Fi</p>
-      <div class="price">от 8000 до 20000 сом / ночь</div>
-      <a href="https://wa.me/996709100020?text=Здравствуйте! Хочу забронировать номер в Ton Marina" class="btn">Забронировать в WhatsApp</a>
-    </div>
-  </div>
 
-  <!-- 2. НОВАЯ РАСШИРЕННАЯ КАРТОЧКА TON MARINA (подробное описание) -->
-  <div class="hotel-card" style="grid-column: span 1;">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-3.jpg" loading="lazy"></div>
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-8.jpg" loading="lazy"></div>
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-15.jpg" loading="lazy"></div>
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-22.jpg" loading="lazy"></div>
-        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-27.jpg" loading="lazy"></div>
+    <!-- Остальные отели (как было) -->
+    <div class="hotel-card">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/69/46/bel-tam-seaside-yurt.jpg?w=900&h=500&s=1" alt="Bel Tam Seaside Yurt Camp">
+      <div class="info">
+        <h3>Bel Tam Seaside Yurt Camp</h3>
+        <p>Юрточный лагерь • Прямо на пляже • Аутентично • Закаты</p>
+        <div class="price">от 8 000 сом / ночь</div>
+        <a href="https://wa.me/996709100020" class="btn">Забронировать в WhatsApp</a>
       </div>
-      <div class="swiper-pagination"></div>
     </div>
-    <div class="info">
-      <h3>⭐ Ton Marina Apart-Hotel — Подробно</h3>
-      <p style="font-size:1rem;line-height:1.7;margin-bottom:20px;">
-        <strong>Расположение:</strong> село Тон, южный берег Иссык-Куля (первая линия)<br>
-        <strong>Год открытия:</strong> 2024 (полная реконструкция 2025)<br>
-        <strong>Тип:</strong> апарт-отель премиум-класса (10–15 апартаментов)<br><br>
-        ● Полноценная кухня в каждом номере<br>
-        ● Собственный песчаный пляж + длинный пирс<br>
-        ● Сезонный бассейн-инфинити<br>
-        ● Ресторан с панорамной террасой<br>
-        ● Бесплатный Wi-Fi 100 Мбит/с<br>
-        ● Трансфер из/в аэропорт и Бишкек<br>
-        ● Аренда катеров, SUP, велосипедов<br><br>
-        <strong>Цены 2025–2026:</strong><br>
-        • Низкий сезон — 8 000–14 000 сом<br>
-        • Высокий сезон (июнь–сентябрь) — 15 000–25 000 сом<br>
-        • Новый год и праздники — до 35 000 сом
-      </p>
-      <div class="price">от 8 000 сом / ночь</div>
-      <a href="https://wa.me/996709100020?text=Здравствуйте! Интересует подробная информация и бронирование в Ton Marina Apart-Hotel" class="btn">
-        Забронировать / Узнать подробнее
-      </a>
-    </div>
+
+    <!-- Добавь сюда другие отели по желанию -->
+
   </div>
-
-  <!-- Остальные отели без изменений -->
-  <div class="hotel-card">
-    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/69/46/bel-tam-seaside-yurt.jpg?w=900&h=500&s=1" alt="Tong Marina Apart-Hotel">
-    <div class="info">
-      <h3>Tong Marina Apart-Hotel</h3>
-      <p>Современные апартаменты • Первая линия • Бассейн • Вид на озеро</p>
-      <div class="price">от 15 000 сом / ночь</div>
-      <a href="https://wa.me/996700123456" class="btn">Забронировать в WhatsApp</a>
-    </div>
-  </div>
-
-  <!-- дальше все остальные карточки без изменений -->
-  <div class="hotel-card">
-    <img src="https://c8.alamy.com/comp/2AGAC62/lake-issyk-kul-kyrgyzstan-empty-sandy-beach-on-the-southern-shore-of-the-lake-2AGAC62.jpg" alt="Elestet Issyk-Kul">
-    <div class="info"><h3>Elestet Issyk-Kul</h3><p>Комфортабельный отель • Приватный пляж • Ресторан • Горы</p><div class="price">от 12 000 сом / ночь</div><a href="https://wa.me/996555987654" class="btn">Забронировать в WhatsApp</a></div>
-  </div>
-
-  <!-- Bel Tam, Apricot, Almaluu — оставляем как есть -->
-  <!-- … -->
-
 </div>
+
+<!-- МОДАЛЬНОЕ ОКНО с 28 фото Ton Marina -->
+<div class="modal" id="tonMarinaModal">
+  <div class="close-modal" onclick="closeModal()">×</div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Ton Marina Apart-Hotel</h3>
+      <p>Село Тон • Южный берег Иссык-Куля</p>
+    </div>
+    <div class="modal-body">
+      <div class="swiper modal-swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina 1" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="Ton Marina 2" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-3.jpg" alt="Ton Marina 3" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-4.jpg" alt="Ton Marina 4" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-5.jpg" alt="Ton Marina 5" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-6.jpg" alt="Ton Marina 6" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-7.jpg" alt="Ton Marina 7" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-8.jpg" alt="Ton Marina 8" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-9.jpg" alt="Ton Marina 9" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-10.jpg" alt="Ton Marina 10" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-11.jpg" alt="Ton Marina 11" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-12.jpg" alt="Ton Marina 12" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-13.jpg" alt="Ton Marina 13" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-14.jpg" alt="Ton Marina 14" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-15.jpg" alt="Ton Marina 15" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-16.jpg" alt="Ton Marina 16" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-17.jpg" alt="Ton Marina 17" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-18.jpg" alt="Ton Marina 18" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-19.jpg" alt="Ton Marina 19" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-20.jpg" alt="Ton Marina 20" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-21.jpg" alt="Ton Marina 21" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-22.jpg" alt="Ton Marina 22" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-23.jpg" alt="Ton Marina 23" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-24.jpg" alt="Ton Marina 24" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-25.jpg" alt="Ton Marina 25" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-26.jpg" alt="Ton Marina 26" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-27.jpg" alt="Ton Marina 27" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-28.jpg" alt="Ton Marina 28" loading="lazy"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="modal-info">
+        <p><strong>Ton Marina Apart-Hotel</strong> — современный комплекс на первой линии южного берега Иссык-Куля в селе Тон.<br>
+        Апартаменты с полноценной кухней, балконами и панорамным видом на озеро. Собственный пирс, пляжная зона, Wi-Fi, парковка.<br>
+        Идеально для семейного отдыха и длительного пребывания.</p>
+        <div class="price" style="display:inline-block;font-size:1.5rem;">от 8000 до 20000 сом / ночь</div>
+        <br><br>
+        <a href="https://wa.me/996709100020?text=Здравствуйте! Хочу забронировать номер в Ton Marina" class="btn">Забронировать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Южный Берег Иссык-Куля · Боконбаево и окрестности<br>
+  +996 709 100 020 · +996 702 703 456
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Инициализация слайдера в модалке
+  let modalSwiper;
+  function openModal() {
+    document.getElementById('tonMarinaModal').classList.add('active');
+    // Инициализируем слайдер только при открытии (чтобы не тормозило страницу)
+    if (!modalSwiper) {
+      modalSwiper = new Swiper('.modal-swiper', {
+        loop: true,
+        autoplay: { delay: 4000 },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        grabCursor: true
+      });
+    }
+  }
+  function closeModal() {
+    document.getElementById('
