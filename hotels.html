@@ -53,7 +53,6 @@
       font-weight:700;padding:14px 32px;border-radius:50px;text-decoration:none;
       font-size:1.1rem;box-shadow:0 8px 25px rgba(0,212,255,0.4);transition:.3s;}
     .btn:hover{background:#ff8c00;transform:scale(1.08)}
-    footer{text-align:center;padding:60px 20px;background:#e0ffff;color:#006666;font-size:0.95rem;}
 
     /* Модальное окно */
     .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;
@@ -67,9 +66,7 @@
       padding:30px;text-align:center;background:#006666;color:#fff;
     }
     .modal-header h3{font-size:2.2rem;margin-bottom:10px;}
-    .modal-body{
-      flex-grow:1;display:flex;flex-direction:column;
-    }
+    .modal-body{flex-grow:1;display:flex;flex-direction:column;}
     .modal-swiper{height:500px;}
     .modal-swiper .swiper-slide img{width:100%;height:100%;object-fit:cover;}
     .modal-info{padding:30px;text-align:center;background:rgba(255,255,255,0.95);}
@@ -80,11 +77,11 @@
       display:flex;align-items:center;justify-content:center;transition:.3s;
     }
     .close-modal:hover{background:rgba(255,140,0,0.8);}
+    footer{text-align:center;padding:60px 20px;background:#e0ffff;color:#006666;font-size:0.95rem;}
     @media(max-width:768px){
       .grid{grid-template-columns:1fr}
       .modal-swiper{height:300px;}
       .modal-header h3{font-size:1.8rem;}
-      .modal-content{max-height:95vh;}
     }
   </style>
 </head>
@@ -97,7 +94,7 @@
   <h2>Лучшие отели и апартаменты южного берега 2025</h2>
   <div class="grid">
 
-    <!-- Компактная карточка Ton Marina (клик открывает модалку) -->
+    <!-- Карточка Ton Marina — клик открывает модалку -->
     <div class="hotel-card" onclick="openModal()">
       <img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina Apart-Hotel" loading="lazy">
       <div class="info">
@@ -108,9 +105,9 @@
       </div>
     </div>
 
-    <!-- Остальные отели (как было) -->
+    <!-- Пример другой карточки -->
     <div class="hotel-card">
-      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/69/46/bel-tam-seaside-yurt.jpg?w=900&h=500&s=1" alt="Bel Tam Seaside Yurt Camp">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5f/21/3c/bel-tam-seaside-yurt.jpg?w=700&h=-1&s=1" alt="Bel Tam Seaside Yurt Camp">
       <div class="info">
         <h3>Bel Tam Seaside Yurt Camp</h3>
         <p>Юрточный лагерь • Прямо на пляже • Аутентично • Закаты</p>
@@ -119,60 +116,60 @@
       </div>
     </div>
 
-    <!-- Добавь сюда другие отели по желанию -->
+    <!-- Добавляй сюда другие отели -->
 
   </div>
 </div>
 
-<!-- МОДАЛЬНОЕ ОКНО с 28 фото Ton Marina -->
+<!-- МОДАЛЬНОЕ ОКНО Ton Marina с 28 фото -->
 <div class="modal" id="tonMarinaModal">
   <div class="close-modal" onclick="closeModal()">×</div>
   <div class="modal-content">
     <div class="modal-header">
       <h3>Ton Marina Apart-Hotel</h3>
-      <p>Село Тон • Южный берег Иссык-Куля</p>
+      <p>Село Тон • Южный берег Иссык-Куля • 2025</p>
     </div>
     <div class="modal-body">
       <div class="swiper modal-swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina 1" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="Ton Marina 2" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-3.jpg" alt="Ton Marina 3" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-4.jpg" alt="Ton Marina 4" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-5.jpg" alt="Ton Marina 5" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-6.jpg" alt="Ton Marina 6" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-7.jpg" alt="Ton Marina 7" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-8.jpg" alt="Ton Marina 8" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-9.jpg" alt="Ton Marina 9" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-10.jpg" alt="Ton Marina 10" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-11.jpg" alt="Ton Marina 11" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-12.jpg" alt="Ton Marina 12" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-13.jpg" alt="Ton Marina 13" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-14.jpg" alt="Ton Marina 14" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-15.jpg" alt="Ton Marina 15" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-16.jpg" alt="Ton Marina 16" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-17.jpg" alt="Ton Marina 17" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-18.jpg" alt="Ton Marina 18" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-19.jpg" alt="Ton Marina 19" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-20.jpg" alt="Ton Marina 20" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-21.jpg" alt="Ton Marina 21" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-22.jpg" alt="Ton Marina 22" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-23.jpg" alt="Ton Marina 23" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-24.jpg" alt="Ton Marina 24" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-25.jpg" alt="Ton Marina 25" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-26.jpg" alt="Ton Marina 26" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-27.jpg" alt="Ton Marina 27" loading="lazy"></div>
-          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-28.jpg" alt="Ton Marina 28" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="1" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="2" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-3.jpg" alt="3" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-4.jpg" alt="4" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-5.jpg" alt="5" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-6.jpg" alt="6" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-7.jpg" alt="7" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-8.jpg" alt="8" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-9.jpg" alt="9" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-10.jpg" alt="10" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-11.jpg" alt="11" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-12.jpg" alt="12" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-13.jpg" alt="13" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-14.jpg" alt="14" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-15.jpg" alt="15" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-16.jpg" alt="16" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-17.jpg" alt="17" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-18.jpg" alt="18" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-19.jpg" alt="19" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-20.jpg" alt="20" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-21.jpg" alt="21" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-22.jpg" alt="22" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-23.jpg" alt="23" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-24.jpg" alt="24" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-25.jpg" alt="25" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-26.jpg" alt="26" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-27.jpg" alt="27" loading="lazy"></div>
+          <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-28.jpg" alt="28" loading="lazy"></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
       <div class="modal-info">
-        <p><strong>Ton Marina Apart-Hotel</strong> — современный комплекс на первой линии южного берега Иссык-Куля в селе Тон.<br>
-        Апартаменты с полноценной кухней, балконами и панорамным видом на озеро. Собственный пирс, пляжная зона, Wi-Fi, парковка.<br>
-        Идеально для семейного отдыха и длительного пребывания.</p>
-        <div class="price" style="display:inline-block;font-size:1.5rem;">от 8000 до 20000 сом / ночь</div>
+        <p><strong>Ton Marina Apart-Hotel</strong> — премиум-апартаменты на первой линии в селе Тон.<br>
+        Полноценная кухня, балконы с видом на озеро, собственный пирс и пляжная зона.<br>
+        Идеален для семей и длительного отдыха. Wi-Fi, парковка, спокойствие и красота южного берега.</p>
+        <div class="price" style="font-size:1.6rem;">от 8000 до 20000 сом / ночь</div>
         <br><br>
-        <a href="https://wa.me/996709100020?text=Здравствуйте! Хочу забронировать номер в Ton Marina" class="btn">Забронировать в WhatsApp</a>
+        <a href="https://wa.me/996709100020?text=Здравствуйте! Интересуюсь бронью в Ton Marina" class="btn" style="padding:18px 40px;font-size:1.3rem;">Забронировать в WhatsApp</a>
       </div>
     </div>
   </div>
@@ -183,22 +180,29 @@
   +996 709 100 020 · +996 702 703 456
 </footer>
 
-<!-- Swiper JS -->
+<!-- Swiper JS (ОБЯЗАТЕЛЬНО!) -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  // Инициализация слайдера в модалке
   let modalSwiper;
   function openModal() {
     document.getElementById('tonMarinaModal').classList.add('active');
-    // Инициализируем слайдер только при открытии (чтобы не тормозило страницу)
     if (!modalSwiper) {
       modalSwiper = new Swiper('.modal-swiper', {
         loop: true,
-        autoplay: { delay: 4000 },
+        autoplay: { delay: 4000, disableOnInteraction: false },
         pagination: { el: '.swiper-pagination', clickable: true },
-        grabCursor: true
+        grabCursor: true,
+        keyboard: { enabled: true },
       });
     }
   }
   function closeModal() {
-    document.getElementById('
+    document.getElementById('tonMarinaModal').classList.remove('active');
+  }
+  // Закрытие по клику вне окна
+  document.getElementById('tonMarinaModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
+</body>
+</html>
