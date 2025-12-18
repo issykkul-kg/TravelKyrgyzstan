@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+<голова>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лучшие отели • Южный Берег Иссык-Куля • 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
-    /* (тот же стиль, что и раньше — не меняй) */
-    /* ... (вставь весь стиль из предыдущего кода) ... */
+    тело {
+      font-family: 'Inter', sans-serif;
+      фон: #f7f7f7;
+      отступ: 0;
+      отступ: 0;
+    }
+    .hotel-card {
+      ширина: 320 пикселей;
+      фон: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 40px auto;
+      переполнение: скрыто;
+      курсор: указатель;
+      transition: box-shadow 0.2s;
+    }
+    .hotel-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    }
+    .hotel-card img {
+      ширина: 100%;
+      display: block;
+      высота: 200 пикселей;
+      object-fit: cover;
+    }
+    .modal {
+      display: none;
+      положение: фиксированное;
+      z-индекс: 1000;
+      слева: 0; сверху: 0; справа: 0; снизу: 0;
+      фон: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      фон: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 90vw;
+      максимальная высота: 90vh;
+      переполнение: авто;
+      положение: относительное;
+    }
+    .modal-close {
+      положение: абсолютное;
+      top: 12px;
+      справа: 16 пикселей;
+      font-size: 28px;
+      цвет: #888;
+      курсор: указатель;
+      фон: отсутствует;
+      граница: отсутствует;
+    }
+    .swiper {
+      ширина: 600 пикселей;
+      max-width: 90vw;
+      высота: 340 пикселей;
+      margin-bottom: 16px;
+    }
+    .swiper-slide img {
+      ширина: 100%;
+      высота: 320 пикселей;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    @media (max-width: 700px) {
+      .swiper { width: 98vw; }
+      .swiper-slide img { height: 180px; }
+      .modal-content { padding: 8px; }
+    }
   </style>
 </head>
-<body>
-<!-- (весь контент до модалки) -->
+<тело>
 
-<!-- Карточка Ton Marina -->
+<!-- Карточка Тон Марина -->
 <div class="hotel-card" onclick="openModal()">
   <img src="images/ton-marina/Ton-Marina-1.jpg" alt="Ton Marina Apart-Hotel" loading="lazy">
-  <!-- ... -->
-</div>
-
-<!-- Модальное окно с .jpg в конце всех файлов -->
-<div class="modal" id="tonMarinaModal">
-  <!-- ... -->
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="1" loading="lazy"></div>
-    <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="2" loading="lazy"></div>
-    <!-- ... и так до 28.jpg -->
+  <div style="padding:16px;">
+    <h3 style="margin:0 0 8px 0;">Апарт-отель Тон Марина</h3>
+    <p style="margin:0;color:#555;">Южный берег, Иссык-Куль</p>
   </div>
-  <!-- ... -->
 </div>
 
-<!-- (скрипты Swiper в конце) -->
+<!-- Модальное окно -->
+<div class="modal" id="tonMarinaModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Слайды с изображениями -->
+        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-1.jpg" alt="1" loading="lazy"></div>
+        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-2.jpg" alt="2" loading="lazy"></div>
+        <div class="swiper-slide"><img src="images/ton-marina/Ton-Marina-3.jpg" alt="3" loading="lazy"></div>
+        <!-- Добавьте остальные слайды до 28.jpg -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div>
+      <h2>Апарат-отель Тон Марина</h2>
+      <p>Описание отеля, удобства, контакты и т.д.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  function openModal() {
+    document.getElementById('tonMarinaModal').classList.add('active');
+    if (!window.tonMarinaSwiper) {
+      window.tonMarinaSwiper = new Swiper('.swiper', {
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        пагинация: { el: '.swiper-pagination', clickable: true },
+        цикл: true,
+      });
+    }
+  }
+  function closeModal() {
+    document.getElementById('tonMarinaModal').classList.remove('active');
+  }
+  document.getElementById('tonMarinaModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+</script>
 </body>
 </html>
